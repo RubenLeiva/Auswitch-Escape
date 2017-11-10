@@ -64,6 +64,8 @@ public class Juego2 extends JFrame {
 						Icon cho = new ImageIcon(icono2.getImage().getScaledInstance(fuego.getWidth(), fuego.getHeight(), Image.SCALE_DEFAULT));
 						fuego.setIcon(cho);
 						
+						
+						
 					
 					case KeyEvent.VK_UP: Personaje.setLocation(x, y-25);
 					
@@ -151,8 +153,10 @@ public class Juego2 extends JFrame {
 		fuego.setBackground(Color.GRAY);
 		fuego.setForeground(Color.BLACK);
 		fuego.setVisible(false);
-		fuego.setBounds(103, 363, 53, 342);
+		fuego.setBounds(102, 444, 77, 87);
 		contentPane.add(fuego);
+		
+		
 		
 		Start = new JLabel("");
 		Start.setBounds(490, 302, 46, 14);
@@ -162,5 +166,7 @@ public class Juego2 extends JFrame {
 		Inicio.setIcon(new ImageIcon(Juego2.class.getResource("/Level1/Nivel inicio.png")));
 		Inicio.setBounds(0, 0, 1354, 705);
 		contentPane.add(Inicio);
+		
+	
 	}
 }

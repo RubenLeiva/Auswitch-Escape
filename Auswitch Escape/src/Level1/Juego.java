@@ -11,6 +11,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.Color;
 
 public class Juego extends JFrame {
 
@@ -41,6 +42,7 @@ public class Juego extends JFrame {
 	Icon icono;
 	Icon icono2;
 	int suma= 1;
+	int lucas = 0;
 	
 	public Juego() {
 		
@@ -56,12 +58,14 @@ public class Juego extends JFrame {
 					if(suma % 2 == 0){
 						icono = new ImageIcon(getClass().getResource("/Level1/kaviDer1.png"));
 						Kavi.setIcon(icono);
-					}else if (x == 1250){
+					}else if (x == 1250 && lucas == 0){
 						icono = new ImageIcon(getClass().getResource("/Level1/Fondo2Lv1.jpg"));
 						Fondo.setIcon(icono);
 						Kavi.setLocation(x=-50, y = 450);
+						lucas = 6988;
+						
 					
-					}else if(x == 1225 && icono.equals(icono2) == true){
+					}else if(x == 1250 && lucas == 6988){
 						FinCompletado.setVisible(true);
 						Kavi.setVisible(false);
 						
@@ -83,6 +87,7 @@ public class Juego extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setForeground(Color.GRAY);
 		contentPane.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent e) {
 			
