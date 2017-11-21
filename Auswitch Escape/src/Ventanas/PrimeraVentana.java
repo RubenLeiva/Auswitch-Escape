@@ -93,6 +93,8 @@ public class PrimeraVentana extends JFrame {
 			}
 			
 			int contador = 0;
+			private TimerTask tarea = null;
+			int i=0;
 			public void mouseClicked(MouseEvent e) {
 				final SeleccionPersonaje s = new SeleccionPersonaje();
 				s.setVisible(true);
@@ -100,7 +102,7 @@ public class PrimeraVentana extends JFrame {
 				int velocidad = 5;
 				
 				Timer timer;
-				TimerTask tarea;
+				
 				
 				int velmil = velocidad * 100;
 				SeleccionPersonaje cambio = new SeleccionPersonaje();
@@ -111,10 +113,11 @@ public class PrimeraVentana extends JFrame {
 				
 					public void run() {
 						
-					
+						
 						Icon icono;
 						if(cambio.KabiA.isVisible()==true){
 							if(cambio.Kabi.isVisible()==false){
+								
 								switch(contador){
 								case 0:
 									contador = 1;
@@ -148,14 +151,23 @@ public class PrimeraVentana extends JFrame {
 									break;
 								case 6:
 									contador = 7;
+									i = i + 1;
 									icono = new ImageIcon(getClass().getResource("/Ventanas/kaviD2.png"));	
 									cambio.KabiA.setIcon(icono);
+									
 									break;
 								case 7:
 									contador = 6;
-									icono = new ImageIcon(getClass().getResource("/Ventanas/kaviD3.png"));	
-									cambio.KabiA.setIcon(icono);
+									if(i==3){
+										Comic c = new Comic();
+										c.setVisible(true);
+										dispose();
+										tarea.cancel();
+									}
+										icono = new ImageIcon(getClass().getResource("/Ventanas/kaviD3.png"));	
+										cambio.KabiA.setIcon(icono);	
 									break;
+									
 								}
 							}else{
 						switch(contador){

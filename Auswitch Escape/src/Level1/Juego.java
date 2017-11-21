@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.Color;
+import java.awt.Font;
 
 public class Juego extends JFrame {
 
@@ -43,6 +44,9 @@ public class Juego extends JFrame {
 	Icon icono2;
 	int suma= 1;
 	int lucas = 0;
+	private JLabel CuentaAtras;
+	int tiempo;
+	int tiempo2;
 	
 	public Juego() {
 		
@@ -55,9 +59,11 @@ public class Juego extends JFrame {
 				
 				if (e.getKeyChar()== ' '){
 					Inicio.setVisible(false);
+				
 					if(suma % 2 == 0){
 						icono = new ImageIcon(getClass().getResource("/Level1/kaviDer1.png"));
 						Kavi.setIcon(icono);
+						
 					}else if (x == 1250 && lucas == 0){
 						icono = new ImageIcon(getClass().getResource("/Level1/Fondo2Lv1.jpg"));
 						Fondo.setIcon(icono);
@@ -69,18 +75,22 @@ public class Juego extends JFrame {
 						FinCompletado.setVisible(true);
 						Kavi.setVisible(false);
 						
+						
 					}else{
 						icono = new ImageIcon(getClass().getResource("/Level1/kaviDer2.png"));
-						Kavi.setIcon(icono);
+					Kavi.setIcon(icono);
 					}
 						
 					}
 					x = x + 25;
 					Kavi.setLocation(x, y);
 					suma++;
-				}
+					
 				
-			
+					
+				}
+		
+		
 			
 		});
 		this.setExtendedState(MAXIMIZED_BOTH);
@@ -97,13 +107,20 @@ public class Juego extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
+		
 		Inicio = new JLabel("");
 		Inicio.setIcon(new ImageIcon(Juego.class.getResource("/Level1/Nivel inicio.png")));
-		Inicio.setBounds(0, 65, 1558, 745);
+		Inicio.setBounds(10, 59, 1558, 745);
 		contentPane.add(Inicio);
 		
 		FinCompletado = new JLabel("");
 		FinCompletado.setVisible(false);
+		
+		CuentaAtras = new JLabel("20");
+		CuentaAtras.setFont(new Font("Who asks Satan", Font.BOLD | Font.ITALIC, 48));
+		CuentaAtras.setBounds(591, 100, 258, 104);
+		contentPane.add(CuentaAtras);
 		FinCompletado.setIcon(new ImageIcon(Juego.class.getResource("/Level1/Nivel final.png")));
 		FinCompletado.setBounds(0, 0, 1362, 705);
 		contentPane.add(FinCompletado);
@@ -117,5 +134,12 @@ public class Juego extends JFrame {
 		Fondo.setIcon(new ImageIcon(Juego.class.getResource("/Level1/Fondo1Lv1.jpg")));
 		Fondo.setBounds(0, 0, 1362, 705);
 		contentPane.add(Fondo);
+	}
+	private static void delaySegundos(){
+		try{
+			Thread.sleep(1000);
+		}catch(InterruptedException e){
+			
+		}
 	}
 }

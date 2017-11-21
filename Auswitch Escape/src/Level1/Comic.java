@@ -76,8 +76,8 @@ public class Comic extends JFrame {
 					Comic2.setVisible(false);
 					Comic3.setVisible(true);
 					Siguiente.setVisible(false);
-					SiguienteP.setVisible(false);
 					Start.setVisible(true);
+					SiguienteP.setVisible(false);
 				}
 			}
 		});

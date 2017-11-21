@@ -2,6 +2,7 @@ package Level2;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Graphics;
 import java.awt.Image;
 
 import javax.swing.JFrame;
@@ -13,6 +14,7 @@ import javax.swing.ImageIcon;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.Color;
+import javax.swing.JButton;
 
 
 public class Juego2 extends JFrame {
@@ -20,6 +22,8 @@ public class Juego2 extends JFrame {
 	private JPanel contentPane;
 	private JLabel Personaje;
 	private JLabel Inicio;
+	private String dato= "";
+	private JLabel fondo;
 
 	/**
 	 * Launch the application.
@@ -36,17 +40,19 @@ public class Juego2 extends JFrame {
 			}
 		});
 	}
+	
 
 	/**
 	 * Create the frame.
 	 */
+	
 	int x;
 	int y;
 	int suma = 0;
 	Icon icono;
 	Icon icono2;
+	Icon icono1;
 	private JLabel fuego;
-	private JLabel Start;
 	
 	public Juego2() {
 		
@@ -64,8 +70,11 @@ public class Juego2 extends JFrame {
 						Icon cho = new ImageIcon(icono2.getImage().getScaledInstance(fuego.getWidth(), fuego.getHeight(), Image.SCALE_DEFAULT));
 						fuego.setIcon(cho);
 						
+						ImageIcon icono1 = new ImageIcon(getClass().getResource("/Level2/laboratorio.jpg"));
+						Icon chos = new ImageIcon(icono1.getImage().getScaledInstance(fondo.getWidth(), fondo.getHeight(), Image.SCALE_DEFAULT));
+						fondo.setIcon(chos);
 						
-						
+						fondo.setVisible(true);
 					
 					case KeyEvent.VK_UP: Personaje.setLocation(x, y-25);
 					
@@ -132,6 +141,7 @@ public class Juego2 extends JFrame {
 			}
 			
 		});
+	
 		
 		this.setExtendedState(MAXIMIZED_BOTH);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -139,32 +149,32 @@ public class Juego2 extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
 		Personaje = new JLabel("");
+		Personaje.setBounds(0, 599, 83, 94);
 		Personaje.setVisible(false);
+		contentPane.setLayout(null);
 		Personaje.setIcon(new ImageIcon(Juego2.class.getResource("/Ventanas/kaviD0.png")));
-		Personaje.setBounds(-44, 557, 136, 148);
 		contentPane.add(Personaje);
 		
 		
 		fuego = new JLabel("");
+		fuego.setBounds(102, 444, 77, 87);
 		fuego.setIcon(null);
 		fuego.setBackground(Color.GRAY);
 		fuego.setForeground(Color.BLACK);
 		fuego.setVisible(false);
-		fuego.setBounds(102, 444, 77, 87);
+		
+		fondo = new JLabel("");
+		fondo.setBounds(0, 0, 1368, 705);
+		fondo.setVisible(false);
+		fondo.setIcon(new ImageIcon(Juego2.class.getResource("/Level2/laboratorio.jpg")));
+		contentPane.add(fondo);
 		contentPane.add(fuego);
 		
-		
-		
-		Start = new JLabel("");
-		Start.setBounds(490, 302, 46, 14);
-		contentPane.add(Start);
-		
 		Inicio = new JLabel("");
-		Inicio.setIcon(new ImageIcon(Juego2.class.getResource("/Level1/Nivel inicio.png")));
 		Inicio.setBounds(0, 0, 1354, 705);
+		Inicio.setIcon(new ImageIcon(Juego2.class.getResource("/Level2/Nivel2  inicio.png")));
 		contentPane.add(Inicio);
 		
 	
