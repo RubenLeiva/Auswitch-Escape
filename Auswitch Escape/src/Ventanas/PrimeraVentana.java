@@ -220,11 +220,18 @@ public class PrimeraVentana extends JFrame {
 									break;
 								case 6:
 									contador = 7;
+									i = i + 1;
 									icono = new ImageIcon(getClass().getResource("/Ventanas/WeguD2.png"));	
 									cambio.WeguA.setIcon(icono);
 									break;
 								case 7:
 									contador = 6;
+									if(i==3){
+										Comic c = new Comic();
+										c.setVisible(true);
+										dispose();
+										tarea.cancel();
+									}
 									icono = new ImageIcon(getClass().getResource("/Ventanas/WeguD3.png"));	
 									cambio.WeguA.setIcon(icono);
 									break;
@@ -278,11 +285,18 @@ public class PrimeraVentana extends JFrame {
 									break;
 								case 6:
 									contador = 7;
+									i = i + 1;
 									icono = new ImageIcon(getClass().getResource("/Ventanas/TokinoD2.png"));	
 									cambio.TokinoA.setIcon(icono);
 									break;
 								case 7:
 									contador = 6;
+									if(i==3){
+										Comic c = new Comic();
+										c.setVisible(true);
+										dispose();
+										tarea.cancel();
+									}
 									icono = new ImageIcon(getClass().getResource("/Ventanas/TokinoD3.png"));	
 									cambio.TokinoA.setIcon(icono);
 									break;
@@ -337,11 +351,18 @@ public class PrimeraVentana extends JFrame {
 									break;
 								case 6:
 									contador = 7;
+									i = i + 1;
 									icono = new ImageIcon(getClass().getResource("/Ventanas/RudeD2.png"));	
 									cambio.RudeA.setIcon(icono);
 									break;
 								case 7:
 									contador = 6;
+									if(i==3){
+										Comic c = new Comic();
+										c.setVisible(true);
+										dispose();
+										tarea.cancel();
+									}
 									icono = new ImageIcon(getClass().getResource("/Ventanas/RudeD3.png"));	
 									cambio.RudeA.setIcon(icono);
 									break;
@@ -396,11 +417,18 @@ public class PrimeraVentana extends JFrame {
 									break;
 								case 6:
 									contador = 7;
+									i = i + 1;
 									icono = new ImageIcon(getClass().getResource("/Ventanas/YojikoD2.png"));	
 									cambio.YojikoA.setIcon(icono);
 									break;
 								case 7:
 									contador = 6;
+									if(i==3){
+										Comic c = new Comic();
+										c.setVisible(true);
+										dispose();
+										tarea.cancel();
+									}
 									icono = new ImageIcon(getClass().getResource("/Ventanas/YojikoD3.png"));	
 									cambio.YojikoA.setIcon(icono);
 									break;

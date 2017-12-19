@@ -54,7 +54,9 @@ public class Juego2 extends JFrame {
 	Icon icono1;
 	private JLabel fuego;
 	
+	
 	public Juego2() {
+		
 		
 		addKeyListener(new KeyAdapter() {
 			@Override
@@ -62,7 +64,12 @@ public class Juego2 extends JFrame {
 				x = Personaje.getX();
 				y = Personaje.getY();
 				
+				if(x> 1000 && y < 60){
+					Inicio.setVisible(true);
+				}
 				switch (e.getExtendedKeyCode()){
+				
+			
 				
 					case KeyEvent.VK_SPACE: Inicio.setVisible(false);
 					
@@ -176,6 +183,7 @@ public class Juego2 extends JFrame {
 		Inicio.setBounds(0, 0, 1354, 705);
 		Inicio.setIcon(new ImageIcon(Juego2.class.getResource("/Level2/Nivel2  inicio.png")));
 		contentPane.add(Inicio);
+		
 		
 	
 	}

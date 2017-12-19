@@ -6,7 +6,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Extra.CuentaAtras;
+import Level2.Juego2;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.awt.event.KeyAdapter;
@@ -21,6 +26,8 @@ public class Juego extends JFrame {
 	private JLabel Fondo;
 	private JLabel Inicio;
 	private JLabel FinCompletado;
+	private JLabel Reloj;
+	CuentaAtras j = new CuentaAtras();
 	/**
 	 * Launch the application.
 	 */
@@ -44,7 +51,6 @@ public class Juego extends JFrame {
 	Icon icono2;
 	int suma= 1;
 	int lucas = 0;
-	private JLabel CuentaAtras;
 	int tiempo;
 	int tiempo2;
 	
@@ -52,13 +58,14 @@ public class Juego extends JFrame {
 		
 		addKeyListener(new KeyAdapter() {
 			@Override
-			public void keyPressed(KeyEvent e) {
+			public void keyReleased(KeyEvent e) {
 				int x = Kavi.getX();
 				int y = Kavi.getY();
 				icono2 = new ImageIcon(getClass().getResource("/Level1/Fondo2Lv1.jpg"));
 				
 				if (e.getKeyChar()== ' '){
 					Inicio.setVisible(false);
+					j.Inicio(Reloj);
 				
 					if(suma % 2 == 0){
 						icono = new ImageIcon(getClass().getResource("/Level1/kaviDer1.png"));
@@ -76,9 +83,19 @@ public class Juego extends JFrame {
 						Kavi.setVisible(false);
 						
 						
+					}else if(FinCompletado.isVisible()== true && e.getKeyChar()== 'b'){
+						
+						Juego2 j = new Juego2();
+						j.setVisible(true);
+						dispose();
+						
+					}else if(j.seconds== 0 && j.centiseconds== 0){
+						JOptionPane.showMessageDialog(null, "Has perdido");
+						Kavi.setVisible(false);
+						
 					}else{
 						icono = new ImageIcon(getClass().getResource("/Level1/kaviDer2.png"));
-					Kavi.setIcon(icono);
+						Kavi.setIcon(icono);
 					}
 						
 					}
@@ -117,10 +134,11 @@ public class Juego extends JFrame {
 		FinCompletado = new JLabel("");
 		FinCompletado.setVisible(false);
 		
-		CuentaAtras = new JLabel("20");
-		CuentaAtras.setFont(new Font("Who asks Satan", Font.BOLD | Font.ITALIC, 48));
-		CuentaAtras.setBounds(591, 100, 258, 104);
-		contentPane.add(CuentaAtras);
+		Reloj = new JLabel("");
+		Reloj.setForeground(Color.RED);
+		Reloj.setFont(new Font("DK Face Your Fears", Font.PLAIN, 60));
+		Reloj.setBounds(587, 135, 341, 156);
+		contentPane.add(Reloj);
 		FinCompletado.setIcon(new ImageIcon(Juego.class.getResource("/Level1/Nivel final.png")));
 		FinCompletado.setBounds(0, 0, 1362, 705);
 		contentPane.add(FinCompletado);
