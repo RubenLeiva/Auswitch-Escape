@@ -1,12 +1,13 @@
+package Level1;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
 
-public class Level3 extends JFrame {
+public class ubj extends JFrame {
 
 	private JPanel contentPane;
 
@@ -17,7 +18,7 @@ public class Level3 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Level3 frame = new Level3();
+					ubj frame = new ubj();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -29,17 +30,13 @@ public class Level3 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Level3() {
-		this.setExtendedState(MAXIMIZED_BOTH);
+	public ubj() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JLabel label = new JLabel("");
-		label.setBounds(0, 442, 445, 263);
-		contentPane.add(label);
 	}
+
 }
