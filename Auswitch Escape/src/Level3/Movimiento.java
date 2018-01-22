@@ -28,9 +28,15 @@ public class Movimiento extends JPanel implements Runnable{
 		Ganzu = ganzua;
 		hilo.start();
 	}
+	@SuppressWarnings("deprecation")
 	public void Parar(JLabel ganzua){
 		Ganzu = ganzua;
 		hilo.stop();
+	}
+	
+	public void seguir(JLabel ganzua){
+		Ganzu = ganzua;
+		hilo.resume();
 	}
 	
 	public void run(){

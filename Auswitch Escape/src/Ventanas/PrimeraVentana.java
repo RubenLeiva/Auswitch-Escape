@@ -20,6 +20,7 @@ import java.util.TimerTask;
 public class PrimeraVentana extends JFrame {
 
 	private JPanel contentPane;
+	int personaje;
 
 	/**
 	 * Launch the application.
@@ -42,6 +43,8 @@ public class PrimeraVentana extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	
+	
 	public PrimeraVentana() {
 		this.setExtendedState(MAXIMIZED_BOTH);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -117,7 +120,7 @@ public class PrimeraVentana extends JFrame {
 						Icon icono;
 						if(cambio.KabiA.isVisible()==true){
 							if(cambio.Kabi.isVisible()==false){
-								
+								personaje = 0;
 								switch(contador){
 								case 0:
 									contador = 1;
@@ -186,6 +189,7 @@ public class PrimeraVentana extends JFrame {
 						}
 						} else if(cambio.WeguA.isVisible()==true){
 							if(cambio.Wegu.isVisible()==false){
+								personaje = 1;
 								switch(contador){
 								
 								case 0:
@@ -252,6 +256,9 @@ public class PrimeraVentana extends JFrame {
 							}
 						}else if(cambio.TokinoA.isVisible()==true){
 							if(cambio.Tokino.isVisible()==false){
+								
+								personaje = 2;
+								
 								switch(contador){
 								case 0:
 									contador = 1;
@@ -318,7 +325,9 @@ public class PrimeraVentana extends JFrame {
 								}
 						}else if(cambio.RudeA.isVisible()==true){
 							if(cambio.Rude.isVisible()==false){
+								personaje = 3;
 								switch(contador){
+								
 								case 0:
 									contador = 1;
 									icono = new ImageIcon(getClass().getResource("/Ventanas/Rude1.png"));	
@@ -384,6 +393,8 @@ public class PrimeraVentana extends JFrame {
 							}
 						}else if(cambio.YojikoA.isVisible()==true){
 							if(cambio.Yojiko.isVisible()==false){
+								personaje = 4;
+								
 								switch(contador){
 								case 0:
 									contador = 1;
@@ -461,6 +472,8 @@ public class PrimeraVentana extends JFrame {
 
 			
 		});
+		
+		
 		lblPlay.setForeground(Color.BLACK);
 		lblPlay.setFont(new Font("DK Face Your Fears", Font.BOLD | Font.ITALIC, 61));
 		lblPlay.setBounds(58, 526, 167, 50);
@@ -471,4 +484,5 @@ public class PrimeraVentana extends JFrame {
 		lblNewLabel.setBounds(0, 0, 1362, 705);
 		contentPane.add(lblNewLabel);
 	}
+
 }

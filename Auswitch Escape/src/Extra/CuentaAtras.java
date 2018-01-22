@@ -27,8 +27,8 @@ public class CuentaAtras extends JFrame {
 
     // Properties of Program.
     public byte centiseconds = 0;
-    public byte seconds = 20;
-  
+    public int seconds = 20;
+    
 
     private DecimalFormat timeFormatter;
 
@@ -36,6 +36,7 @@ public class CuentaAtras extends JFrame {
 
     public CuentaAtras() {
     	
+    	this.seconds= seconds;
         panel = new JPanel();
         panel.setLayout(new BorderLayout());
 
@@ -59,10 +60,10 @@ public class CuentaAtras extends JFrame {
                 if (centiseconds > 0) {
                     centiseconds--;
                 } else {
-                    if (seconds == 0 ) {
+                    if (CuentaAtras.this.seconds == 0 ) {
                     	tiempo.stop();
-                    } else if (seconds > 0) {
-                        seconds--;
+                    } else if (CuentaAtras.this.seconds > 0) {
+                        CuentaAtras.this.seconds--;
                         centiseconds = 99;
                    
                     }
@@ -85,11 +86,26 @@ public class CuentaAtras extends JFrame {
         pack();
         setVisible(true);
     }
+    
+    
     public void Inicio(JLabel Reloj){
     	Time1 = Reloj;
     	tiempo.start();
     }
+    
+    public void Acabar(JLabel Reloj){
+    	Time1 = Reloj;
+    	tiempo.stop();
+    }
 
+    public void Fin(JLabel Reloj){
+    	Time1 = Reloj;
+    	Time1.setVisible(false);
+    }
+    
+    public void cambiar(byte seconds){
+    	
+    }
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             @Override
@@ -99,7 +115,7 @@ public class CuentaAtras extends JFrame {
                 } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
                 }
 
-                new CuentaAtras();
+               
             }
         });
     }

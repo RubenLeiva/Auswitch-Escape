@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 import Extra.CuentaAtras;
 import Level2.Juego2;
+import Ventanas.PrimeraVentana;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -28,6 +29,8 @@ public class Juego extends JFrame {
 	private JLabel FinCompletado;
 	private JLabel Reloj;
 	CuentaAtras j = new CuentaAtras();
+	PrimeraVentana p = new PrimeraVentana();
+	Juego2 c = new Juego2();
 	/**
 	 * Launch the application.
 	 */
@@ -58,12 +61,13 @@ public class Juego extends JFrame {
 		
 		addKeyListener(new KeyAdapter() {
 			@Override
-			public void keyReleased(KeyEvent e) {
+			public void keyPressed(KeyEvent e) {
 				int x = Kavi.getX();
 				int y = Kavi.getY();
 				icono2 = new ImageIcon(getClass().getResource("/Level1/Fondo2Lv1.jpg"));
 				
 				if (e.getKeyChar()== ' '){
+					
 					Inicio.setVisible(false);
 					j.Inicio(Reloj);
 				
@@ -81,9 +85,13 @@ public class Juego extends JFrame {
 					}else if(x == 1250 && lucas == 6988){
 						FinCompletado.setVisible(true);
 						Kavi.setVisible(false);
+						j.Fin(Reloj);
+						j.Acabar(Reloj);
 						
 						
-					}else if(FinCompletado.isVisible()== true && e.getKeyChar()== 'b'){
+						
+						
+					}else if(FinCompletado.isVisible()== true && e.getKeyChar()== ' '){
 						
 						Juego2 j = new Juego2();
 						j.setVisible(true);

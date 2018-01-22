@@ -8,6 +8,9 @@ import java.awt.Image;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Extra.CuentaAtras;
+
 import javax.swing.JLabel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -15,6 +18,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.Color;
 import javax.swing.JButton;
+import java.awt.Font;
 
 
 public class Juego2 extends JFrame {
@@ -24,7 +28,10 @@ public class Juego2 extends JFrame {
 	private JLabel Inicio;
 	private String dato= "";
 	private JLabel fondo;
-
+	public JLabel Reloj;
+	private JLabel Pies;
+	CuentaAtras j = new CuentaAtras();
+	
 	/**
 	 * Launch the application.
 	 */
@@ -53,7 +60,9 @@ public class Juego2 extends JFrame {
 	Icon icono2;
 	Icon icono1;
 	private JLabel fuego;
-	
+	private JLabel pared6;
+	private JLabel pared;
+
 	
 	public Juego2() {
 		
@@ -67,12 +76,13 @@ public class Juego2 extends JFrame {
 				if(x> 1000 && y < 60){
 					Inicio.setVisible(true);
 				}
+				
 				switch (e.getExtendedKeyCode()){
 				
 			
 				
 					case KeyEvent.VK_SPACE: Inicio.setVisible(false);
-					
+					j.Inicio(Reloj);
 					ImageIcon icono2 = new ImageIcon(getClass().getResource("/Level2/fuego.gif"));
 						Icon cho = new ImageIcon(icono2.getImage().getScaledInstance(fuego.getWidth(), fuego.getHeight(), Image.SCALE_DEFAULT));
 						fuego.setIcon(cho);
@@ -83,7 +93,7 @@ public class Juego2 extends JFrame {
 						
 						fondo.setVisible(true);
 					
-					case KeyEvent.VK_UP: Personaje.setLocation(x, y-25);
+					case KeyEvent.VK_UP: Personaje.setLocation(x, y-5);Pies.setLocation(x, y-5);
 					
 					Personaje.setVisible(true);
 					fuego.setVisible(true);
@@ -107,7 +117,11 @@ public class Juego2 extends JFrame {
 						
 					}
 					break;
-					case KeyEvent.VK_DOWN: Personaje.setLocation(x, y+25);
+					
+					
+					case KeyEvent.VK_DOWN: Personaje.setLocation(x, y +5);Pies.setLocation(x,  y+5);
+					
+					if(!(collision())){
 					suma++;
 					if(suma % 2 == 0){
 						ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kavi3.png"));
@@ -118,9 +132,16 @@ public class Juego2 extends JFrame {
 						Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
 						Personaje.setIcon(ch);
 					}
+					}else{
+						Personaje.setLocation(x, y-5);
+						Pies.setLocation(x, y -5);
+					}
 					break;
-					case KeyEvent.VK_LEFT: Personaje.setLocation(x-25, y);
+					
+					
+					case KeyEvent.VK_LEFT: Personaje.setLocation(x-5, y); Pies.setLocation(x-5,  y);
 					suma++;
+					
 					if(suma % 2 == 0){
 						ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviIzq1.png"));
 						Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
@@ -131,22 +152,35 @@ public class Juego2 extends JFrame {
 						Personaje.setIcon(ch);
 					}
 					break;
-					case KeyEvent.VK_RIGHT: Personaje.setLocation(x+25,y);
-					suma++;
-					if(suma % 2 == 0){
-						ImageIcon icono = new ImageIcon(getClass().getResource("/Level1/kaviDer1.png"));
-						Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
-						Personaje.setIcon(ch);
-					}else{
-						ImageIcon icono = new ImageIcon(getClass().getResource("/Level1/kaviDer2.png"));
-						Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
-						Personaje.setIcon(ch);
-					}
+					
+					
+					
+						case KeyEvent.VK_RIGHT: Personaje.setLocation(x+5, y); Pies.setLocation(x+5,  y);
+						if(!(collision())){
+						suma++;
+						
+						
+						if(suma % 2 == 0){
+							ImageIcon icono = new ImageIcon(getClass().getResource("/Level1/kaviDer1.png"));
+							Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
+							Personaje.setIcon(ch);
+						}else{
+							ImageIcon icono = new ImageIcon(getClass().getResource("/Level1/kaviDer2.png"));
+							Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
+							Personaje.setIcon(ch);
+						
+						}
+						}else{
+							Personaje.setLocation(x-5, y);
+							Pies.setLocation(x-5, y);
+						}
+						break;
+					
 					
 				}
 				
 			}
-			
+		
 		});
 	
 		
@@ -156,13 +190,24 @@ public class Juego2 extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		Pies = new JLabel("");
+		Pies.setBounds(0, 673, 37, 20);
+		Pies.setVisible(false);
+		contentPane.add(Pies);
 		
 		Personaje = new JLabel("");
-		Personaje.setBounds(0, 599, 83, 94);
+		Personaje.setBounds(0, 641, 37, 52);
 		Personaje.setVisible(false);
-		contentPane.setLayout(null);
 		Personaje.setIcon(new ImageIcon(Juego2.class.getResource("/Ventanas/kaviD0.png")));
 		contentPane.add(Personaje);
+		
+		Reloj = new JLabel("");
+		Reloj.setForeground(Color.RED);
+		Reloj.setFont(new Font("DK Face Your Fears", Font.PLAIN, 60));
+		Reloj.setBounds(632, 0, 187, 59);
+		contentPane.add(Reloj);
 		
 		
 		fuego = new JLabel("");
@@ -175,6 +220,35 @@ public class Juego2 extends JFrame {
 		fondo = new JLabel("");
 		fondo.setBounds(0, 0, 1368, 705);
 		fondo.setVisible(false);
+		
+		pared6 = new JLabel("");
+		pared6.setBounds(901, 588, 304, 23);
+		contentPane.add(pared6);
+		
+		JLabel pared4 = new JLabel("");
+		pared4.setBackground(Color.PINK);
+		pared4.setBounds(434, 541, 683, 21);
+		contentPane.add(pared4);
+		
+		JLabel pared5 = new JLabel("");
+		pared5.setBounds(342, 586, 492, 24);
+		contentPane.add(pared5);
+		
+		JLabel pared3 = new JLabel("");
+		pared3.setBounds(358, 442, 387, 19);
+		contentPane.add(pared3);
+		
+		JLabel pared2 = new JLabel("");
+		pared2.setBounds(437, 488, 392, 21);
+		contentPane.add(pared2);
+		
+		JLabel pared1 = new JLabel("");
+		pared1.setBounds(439, 388, 487, 18);
+		contentPane.add(pared1);
+		
+		pared = new JLabel("");
+		pared.setBounds(80, 652, 1235, 20);
+		contentPane.add(pared);
 		fondo.setIcon(new ImageIcon(Juego2.class.getResource("/Level2/laboratorio.jpg")));
 		contentPane.add(fondo);
 		contentPane.add(fuego);
@@ -186,5 +260,9 @@ public class Juego2 extends JFrame {
 		
 		
 	
+	}
+	private boolean collision(){
+		
+		return Pies.getBounds().intersects(pared.getBounds());
 	}
 }
