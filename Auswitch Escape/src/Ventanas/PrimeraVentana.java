@@ -20,6 +20,7 @@ import java.util.TimerTask;
 public class PrimeraVentana extends JFrame {
 
 	private JPanel contentPane;
+	int personaje;
 
 	/**
 	 * Launch the application.
@@ -42,6 +43,8 @@ public class PrimeraVentana extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	
+	
 	public PrimeraVentana() {
 		this.setExtendedState(MAXIMIZED_BOTH);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -93,6 +96,8 @@ public class PrimeraVentana extends JFrame {
 			}
 			
 			int contador = 0;
+			private TimerTask tarea = null;
+			int i=0;
 			public void mouseClicked(MouseEvent e) {
 				final SeleccionPersonaje s = new SeleccionPersonaje();
 				s.setVisible(true);
@@ -100,7 +105,7 @@ public class PrimeraVentana extends JFrame {
 				int velocidad = 5;
 				
 				Timer timer;
-				TimerTask tarea;
+				
 				
 				int velmil = velocidad * 100;
 				SeleccionPersonaje cambio = new SeleccionPersonaje();
@@ -111,10 +116,11 @@ public class PrimeraVentana extends JFrame {
 				
 					public void run() {
 						
-					
+						
 						Icon icono;
 						if(cambio.KabiA.isVisible()==true){
 							if(cambio.Kabi.isVisible()==false){
+								personaje = 0;
 								switch(contador){
 								case 0:
 									contador = 1;
@@ -148,14 +154,23 @@ public class PrimeraVentana extends JFrame {
 									break;
 								case 6:
 									contador = 7;
+									i = i + 1;
 									icono = new ImageIcon(getClass().getResource("/Ventanas/kaviD2.png"));	
 									cambio.KabiA.setIcon(icono);
+									
 									break;
 								case 7:
 									contador = 6;
-									icono = new ImageIcon(getClass().getResource("/Ventanas/kaviD3.png"));	
-									cambio.KabiA.setIcon(icono);
+									if(i==3){
+										Comic c = new Comic();
+										c.setVisible(true);
+										dispose();
+										tarea.cancel();
+									}
+										icono = new ImageIcon(getClass().getResource("/Ventanas/kaviD3.png"));	
+										cambio.KabiA.setIcon(icono);	
 									break;
+									
 								}
 							}else{
 						switch(contador){
@@ -174,6 +189,7 @@ public class PrimeraVentana extends JFrame {
 						}
 						} else if(cambio.WeguA.isVisible()==true){
 							if(cambio.Wegu.isVisible()==false){
+								personaje = 1;
 								switch(contador){
 								
 								case 0:
@@ -208,11 +224,18 @@ public class PrimeraVentana extends JFrame {
 									break;
 								case 6:
 									contador = 7;
+									i = i + 1;
 									icono = new ImageIcon(getClass().getResource("/Ventanas/WeguD2.png"));	
 									cambio.WeguA.setIcon(icono);
 									break;
 								case 7:
 									contador = 6;
+									if(i==3){
+										Comic c = new Comic();
+										c.setVisible(true);
+										dispose();
+										tarea.cancel();
+									}
 									icono = new ImageIcon(getClass().getResource("/Ventanas/WeguD3.png"));	
 									cambio.WeguA.setIcon(icono);
 									break;
@@ -233,6 +256,9 @@ public class PrimeraVentana extends JFrame {
 							}
 						}else if(cambio.TokinoA.isVisible()==true){
 							if(cambio.Tokino.isVisible()==false){
+								
+								personaje = 2;
+								
 								switch(contador){
 								case 0:
 									contador = 1;
@@ -266,11 +292,18 @@ public class PrimeraVentana extends JFrame {
 									break;
 								case 6:
 									contador = 7;
+									i = i + 1;
 									icono = new ImageIcon(getClass().getResource("/Ventanas/TokinoD2.png"));	
 									cambio.TokinoA.setIcon(icono);
 									break;
 								case 7:
 									contador = 6;
+									if(i==3){
+										Comic c = new Comic();
+										c.setVisible(true);
+										dispose();
+										tarea.cancel();
+									}
 									icono = new ImageIcon(getClass().getResource("/Ventanas/TokinoD3.png"));	
 									cambio.TokinoA.setIcon(icono);
 									break;
@@ -292,7 +325,9 @@ public class PrimeraVentana extends JFrame {
 								}
 						}else if(cambio.RudeA.isVisible()==true){
 							if(cambio.Rude.isVisible()==false){
+								personaje = 3;
 								switch(contador){
+								
 								case 0:
 									contador = 1;
 									icono = new ImageIcon(getClass().getResource("/Ventanas/Rude1.png"));	
@@ -325,11 +360,18 @@ public class PrimeraVentana extends JFrame {
 									break;
 								case 6:
 									contador = 7;
+									i = i + 1;
 									icono = new ImageIcon(getClass().getResource("/Ventanas/RudeD2.png"));	
 									cambio.RudeA.setIcon(icono);
 									break;
 								case 7:
 									contador = 6;
+									if(i==3){
+										Comic c = new Comic();
+										c.setVisible(true);
+										dispose();
+										tarea.cancel();
+									}
 									icono = new ImageIcon(getClass().getResource("/Ventanas/RudeD3.png"));	
 									cambio.RudeA.setIcon(icono);
 									break;
@@ -351,6 +393,8 @@ public class PrimeraVentana extends JFrame {
 							}
 						}else if(cambio.YojikoA.isVisible()==true){
 							if(cambio.Yojiko.isVisible()==false){
+								personaje = 4;
+								
 								switch(contador){
 								case 0:
 									contador = 1;
@@ -384,11 +428,18 @@ public class PrimeraVentana extends JFrame {
 									break;
 								case 6:
 									contador = 7;
+									i = i + 1;
 									icono = new ImageIcon(getClass().getResource("/Ventanas/YojikoD2.png"));	
 									cambio.YojikoA.setIcon(icono);
 									break;
 								case 7:
 									contador = 6;
+									if(i==3){
+										Comic c = new Comic();
+										c.setVisible(true);
+										dispose();
+										tarea.cancel();
+									}
 									icono = new ImageIcon(getClass().getResource("/Ventanas/YojikoD3.png"));	
 									cambio.YojikoA.setIcon(icono);
 									break;
@@ -421,6 +472,8 @@ public class PrimeraVentana extends JFrame {
 
 			
 		});
+		
+		
 		lblPlay.setForeground(Color.BLACK);
 		lblPlay.setFont(new Font("DK Face Your Fears", Font.BOLD | Font.ITALIC, 61));
 		lblPlay.setBounds(58, 526, 167, 50);
@@ -431,4 +484,5 @@ public class PrimeraVentana extends JFrame {
 		lblNewLabel.setBounds(0, 0, 1362, 705);
 		contentPane.add(lblNewLabel);
 	}
+
 }

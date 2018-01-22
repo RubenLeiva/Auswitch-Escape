@@ -34,6 +34,7 @@ public class SeleccionPersonaje extends JFrame {
 	public JLabel Rude;
 	private JLabel lblChooseYourSpy;
 	
+	
 	/**
 	 * Launch the application.
 	 */
@@ -480,4 +481,8 @@ public class SeleccionPersonaje extends JFrame {
 		
 		 
 }
+	public void Personajes(JLabel Yojiko,JLabel Kabi,JLabel Tokino,JLabel Wegu, JLabel Rude){
+		
+	}
 }
+
