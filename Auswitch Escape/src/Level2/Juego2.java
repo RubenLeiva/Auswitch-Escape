@@ -111,9 +111,9 @@ public class Juego2 extends JFrame {
 						break;
 					}else{Personaje.setLocation(x, y+25);}
 					
-<<<<<<< HEAD
+
 					case KeyEvent.VK_DOWN: Personaje.setLocation(x, y+25);
-=======
+
 					
 					
 					if(suma % 2 == 0){
