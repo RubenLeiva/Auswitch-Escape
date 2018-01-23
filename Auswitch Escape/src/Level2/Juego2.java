@@ -94,9 +94,10 @@ public class Juego2 extends JFrame {
 					
 					case KeyEvent.VK_UP: Personaje.setLocation(x, y-5);Pies.setLocation(x, y-5);
 					Personaje.setVisible(true);
-					suma++;
+					System.out.println("1");
+			
 					if(!(collision())){
-					
+						suma++;
 					
 					
 						if(suma % 2 == 0){
@@ -111,17 +112,17 @@ public class Juego2 extends JFrame {
 						break;
 					}else{
 					Personaje.setLocation(x, y+5);
-					Pies.setLocation(x, y-5);
+					Pies.setLocation(x, y+5);
 					}
-					
+					break;
 
 				
 					
 					
 					case KeyEvent.VK_DOWN: Personaje.setLocation(x, y +5);Pies.setLocation(x,  y+5);
-					suma++;
+					System.out.println("2");
 					if(!(collision())){
-
+						suma++;
 					
 						
 						if(suma % 2 == 0){
@@ -138,16 +139,14 @@ public class Juego2 extends JFrame {
 						Personaje.setLocation(x, y-5);
 						Pies.setLocation(x,  y-5);
 					}
-					
+						break;
 				
 					
 					
 					case KeyEvent.VK_LEFT: Personaje.setLocation(x-5, y); Pies.setLocation(x-5,  y);
-
-					suma++;
-
+					System.out.println("3");
 						if(!(collision())){
-
+							suma++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviIzq1.png"));
 							Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
@@ -160,18 +159,16 @@ public class Juego2 extends JFrame {
 						break;
 					}else{
 						Personaje.setLocation(x+5, y);
-						Pies.setLocation(x,  y+5);
+						Pies.setLocation(x+5, 5);
 					}
-					
+						break;
 					
 					
 					
 					case KeyEvent.VK_RIGHT: Personaje.setLocation(x+5, y); Pies.setLocation(x+5,  y);
-					suma++;	
+					System.out.println("4");
 					if(!(collision())){
-						
-						
-						
+						suma++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Level1/kaviDer1.png"));
 							Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
