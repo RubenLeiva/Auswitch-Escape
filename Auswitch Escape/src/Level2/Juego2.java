@@ -89,6 +89,19 @@ public class Juego2 extends JFrame {
 	private JLabel pared26;
 	private JLabel pared27;
 	private JLabel pared28;
+	private JLabel pared29;
+	private JLabel pared30;
+	private JLabel pared31;
+	private JLabel pared32;
+	private JLabel pared33;
+	private JLabel pared34;
+	private JLabel pared35;
+	private JLabel pared36;
+	private JLabel pared37;
+	private JLabel pared38;
+	private JLabel pared39;
+	private JLabel pared40;
+	private JLabel pared41;
 
 	
 	public Juego2() {
@@ -123,7 +136,8 @@ public class Juego2 extends JFrame {
 					Personaje.setVisible(true);
 					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8() && !collision9() && !collision10()
 && !collision11()  && !collision12() && !collision13() && !collision14() && !collision15() && !collision16() && !collision17() && !collision18() && !collision19() && !collision20() && !collision21() && !collision22()
-&& !collision23()&& !collision24() && !collision25() && !collision27()){
+&& !collision23()&& !collision24() && !collision25() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31()  && !collision32() && !collision33()
+&& !collision34() && !collision35() && !collision36() && !collision37() && !collision38() && !collision39() && !collision40() && !collision41()){
 						suma ++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviD2.png"));
@@ -148,7 +162,8 @@ public class Juego2 extends JFrame {
 					case KeyEvent.VK_DOWN: Personaje.setLocation(x, y +5);Pies.setLocation(x,  y+5);
 					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8() && !collision9() && !collision10()
 && !collision11()  && !collision12() && !collision13() && !collision14() && !collision15() && !collision16() && !collision17() && !collision18() && !collision19() && !collision20() && !collision21() && !collision22()
-&& !collision23()&& !collision24() && !collision25() && !collision26() && !collision27()){	
+&& !collision23()&& !collision24() && !collision25() && !collision26() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31()  && !collision32() && !collision33()
+&& !collision34() && !collision35() && !collision36() && !collision37() && !collision38() && !collision39() && !collision40() && !collision41()){	
 						suma++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kavi3.png"));
@@ -171,7 +186,8 @@ public class Juego2 extends JFrame {
 					case KeyEvent.VK_LEFT: Personaje.setLocation(x-5, y); Pies.setLocation(x-5,  y);
 					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8() && !collision9() && !collision10()
 && !collision11()  && !collision12() && !collision13() && !collision14() && !collision15() && !collision16() && !collision17() && !collision18() && !collision19() && !collision20() && !collision21() && !collision22()
-&& !collision23()&& !collision24() && !collision25() && !collision26() && !collision27()){						
+&& !collision23()&& !collision24() && !collision25() && !collision26() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31()  && !collision32() && !collision33()
+&& !collision34() && !collision35() && !collision36() && !collision37() && !collision38() && !collision39() && !collision40() && !collision41()){						
 						suma++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviIzq1.png"));
@@ -194,7 +210,8 @@ public class Juego2 extends JFrame {
 					case KeyEvent.VK_RIGHT: Personaje.setLocation(x+5, y); Pies.setLocation(x+5,  y);
 					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8() && !collision9() && !collision10()
 && !collision11()  && !collision12() && !collision13() && !collision14() && !collision15() && !collision16() && !collision17() && !collision18() && !collision19() && !collision20() && !collision21() && !collision22()
-&& !collision23() && !collision24() && !collision25() && !collision26() && !collision27()){
+&& !collision23() && !collision24() && !collision25() && !collision26() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31() && !collision32() && !collision33()
+&& !collision34() && !collision35() && !collision36() && !collision37() && !collision38() && !collision39() && !collision40() && !collision41()){
 						suma++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Level1/kaviDer1.png"));
@@ -251,8 +268,60 @@ public class Juego2 extends JFrame {
 		fondo.setBounds(0, 0, 1368, 705);
 		fondo.setVisible(false);
 		
+		pared41 = new JLabel("");
+		pared41.setBounds(740, 136, 4, 83);
+		contentPane.add(pared41);
+		
+		pared40 = new JLabel("");
+		pared40.setBounds(914, 0, 15, 126);
+		contentPane.add(pared40);
+		
+		pared39 = new JLabel("");
+		pared39.setBounds(744, 75, 68, 9);
+		contentPane.add(pared39);
+		
+		pared38 = new JLabel("");
+		pared38.setBounds(744, 54, 6, 31);
+		contentPane.add(pared38);
+		
+		pared37 = new JLabel("");
+		pared37.setBounds(642, 54, 9, 31);
+		contentPane.add(pared37);
+		
+		pared36 = new JLabel("");
+		pared36.setBounds(1204, 75, 6, 51);
+		contentPane.add(pared36);
+		
+		pared35 = new JLabel("");
+		pared35.setBounds(1104, 75, 224, 3);
+		contentPane.add(pared35);
+		
+		pared34 = new JLabel("");
+		pared34.setBounds(563, 124, 539, 22);
+		contentPane.add(pared34);
+		
+		pared33 = new JLabel("");
+		pared33.setBounds(543, 124, 17, 205);
+		contentPane.add(pared33);
+		
+		pared32 = new JLabel("");
+		pared32.setBounds(543, 326, 182, 3);
+		contentPane.add(pared32);
+		
+		pared31 = new JLabel("");
+		pared31.setBounds(1291, 76, 37, 617);
+		contentPane.add(pared31);
+		
+		pared30 = new JLabel("");
+		pared30.setBounds(726, 274, 6, 51);
+		contentPane.add(pared30);
+		
+		pared29 = new JLabel("");
+		pared29.setBounds(650, 270, 53, 9);
+		contentPane.add(pared29);
+		
 		pared28 = new JLabel("");
-		pared28.setBounds(0, 0, 46, 14);
+		pared28.setBounds(645, 226, 6, 48);
 		contentPane.add(pared28);
 		
 		pared27 = new JLabel("");
@@ -576,5 +645,102 @@ public class Juego2 extends JFrame {
 		}
 			return resultado27;
 		}
-	
+	private boolean collision28(){
+		boolean resultado28 = false;
+		if (Pies.getBounds().intersects(pared28.getBounds())){
+			resultado28 = true;
+		}
+			return resultado28;
+		}
+	private boolean collision29(){
+		boolean resultado29 = false;
+		if (Pies.getBounds().intersects(pared29.getBounds())){
+			resultado29 = true;
+		}
+			return resultado29;
+		}
+	private boolean collision30(){
+		boolean resultado30 = false;
+		if (Pies.getBounds().intersects(pared30.getBounds())){
+			resultado30 = true;
+		}
+			return resultado30;
+		}
+	private boolean collision31(){
+		boolean resultado31 = false;
+		if (Pies.getBounds().intersects(pared31.getBounds())){
+			resultado31 = true;
+		}
+			return resultado31;
+		}
+	private boolean collision32(){
+		boolean resultado32 = false;
+		if (Pies.getBounds().intersects(pared32.getBounds())){
+			resultado32 = true;
+		}
+			return resultado32;
+		}
+	private boolean collision33(){
+		boolean resultado33 = false;
+		if (Pies.getBounds().intersects(pared33.getBounds())){
+			resultado33 = true;
+		}
+			return resultado33;
+		}
+	private boolean collision34(){
+		boolean resultado34 = false;
+		if (Pies.getBounds().intersects(pared34.getBounds())){
+			resultado34 = true;
+		}
+			return resultado34;
+		}
+	private boolean collision35(){
+		boolean resultado35 = false;
+		if (Pies.getBounds().intersects(pared35.getBounds())){
+			resultado35 = true;
+		}
+			return resultado35;
+		}
+	private boolean collision36(){
+		boolean resultado36= false;
+		if (Pies.getBounds().intersects(pared36.getBounds())){
+			resultado36 = true;
+		}
+			return resultado36;
+		}
+	private boolean collision37(){
+		boolean resultado37= false;
+		if (Pies.getBounds().intersects(pared37.getBounds())){
+			resultado37 = true;
+		}
+			return resultado37;
+		}
+	private boolean collision38(){
+		boolean resultado38= false;
+		if (Pies.getBounds().intersects(pared38.getBounds())){
+			resultado38 = true;
+		}
+			return resultado38;
+		}
+	private boolean collision39(){
+		boolean resultado39= false;
+		if (Pies.getBounds().intersects(pared39.getBounds())){
+			resultado39 = true;
+		}
+			return resultado39;
+		}
+	private boolean collision40(){
+		boolean resultado40= false;
+		if (Pies.getBounds().intersects(pared40.getBounds())){
+			resultado40 = true;
+		}
+			return resultado40;
+		}
+	private boolean collision41(){
+		boolean resultado41= false;
+		if (Pies.getBounds().intersects(pared41.getBounds())){
+			resultado41 = true;
+		}
+			return resultado41;
+		}
 }
