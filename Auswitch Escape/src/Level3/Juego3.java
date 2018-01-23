@@ -103,31 +103,30 @@ public class Juego3 extends JFrame {
 								System.out.println("primer candao resulto");
 							}else{
 								
-			//					g.ejemplo(Juego3.this);
+		
 								JOptionPane.showMessageDialog(null, "Vuelve a intentarlo");
 							}
 						break;
 						case 1: j.Parar(Ganzua);
 							if (Ganzua.getX() + 235 >= 642 && Ganzua.getX() + 225 <= 760 && caso == 1) {
-								g.ej(Juego3.this);
+								g.ejemplo(Juego3.this);
 								Parte2.setVisible(false);
 								Parte3.setVisible(true);
 								caso = 2;
 								System.out.println("segundo candao resulto");
 							}else{
 									
-		//						g.ejemplo(Juego3.this);
+								
 								JOptionPane.showMessageDialog(null, "2 Vuelve a intentarlo");
 							}
 						break;
 						case 2: j.Parar(Ganzua);
 							if (Ganzua.getX() + 235 >= 242 && Ganzua.getX() + 225 <= 302 && caso == 2) {
-								g.ej(Juego3.this);
+								g.ejemplo3(Juego3.this);
 								Parte3.setVisible(false);
 								System.out.println("tercer candao resulto");
 							}else{
-									
-		//						g.ejemplo(Juego3.this);
+	
 								JOptionPane.showMessageDialog(null, "3 Vuelve a intentarlo");
 							}
 						break;
