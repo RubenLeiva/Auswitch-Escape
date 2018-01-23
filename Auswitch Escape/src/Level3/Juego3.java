@@ -94,9 +94,9 @@ public class Juego3 extends JFrame {
 					if (Ganzua.getX()+235 >= 442 && Ganzua.getX()+235 <= 636) {
 					g.ej(Juego3.this);
 					
+					}else{
 						
-					} else {
-						JOptionPane.showMessageDialog(null, " No Funciona");
+				g.ejemplo(Juego3.this);
 					
 					}
 					break;

@@ -14,7 +14,7 @@ public class Movimiento extends JPanel implements Runnable{
 	Thread hilo;
 	public Movimiento() {
 		hilo = new Thread(this);
-		System.out.println("Nuevo");
+		
 	}
 	
 	public void Ganzu(){
@@ -38,7 +38,7 @@ public class Movimiento extends JPanel implements Runnable{
 	public void Parar(JLabel ganzua){
 		Ganzu = ganzua;
 		pausa= true;
-		//hilo.stop();
+		hilo.stop();
 	}
 	
 	public void seguir(JLabel ganzua){
@@ -54,13 +54,11 @@ public class Movimiento extends JPanel implements Runnable{
 			if(!pausa){
 				while(x<940){
 					Thread.sleep(50);
-					//System.out.println("Der" + x);
 					x+=30;
 					Ganzu.setLocation(x, Ganzu.getY());
 				
 				} while (x>0){
 					Thread.sleep(50);
-//					System.out.println("Izq" + x);
 					x-=30;
 					Ganzu.setLocation(x, Ganzu.getY());
 				}

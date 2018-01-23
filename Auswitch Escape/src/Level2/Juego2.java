@@ -30,6 +30,12 @@ public class Juego2 extends JFrame {
 	private JLabel fondo;
 	public JLabel Reloj;
 	private JLabel Pies;
+	private JLabel pared1;
+	private JLabel pared2;
+	private JLabel pared3;
+	private JLabel pared4;
+	private JLabel pared5;
+	private JLabel pared7;
 	CuentaAtras j = new CuentaAtras();
 	
 	/**
@@ -62,6 +68,7 @@ public class Juego2 extends JFrame {
 
 	private JLabel pared6;
 	private JLabel pared;
+	private JLabel pared8;
 
 	
 	public Juego2() {
@@ -94,9 +101,8 @@ public class Juego2 extends JFrame {
 					
 					case KeyEvent.VK_UP: Personaje.setLocation(x, y-5);Pies.setLocation(x, y-5);
 					Personaje.setVisible(true);
-					System.out.println("1");
-			
-					if(!(collision())){
+					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8()){
+						
 						suma++;
 					
 					
@@ -114,14 +120,14 @@ public class Juego2 extends JFrame {
 					Personaje.setLocation(x, y+5);
 					Pies.setLocation(x, y+5);
 					}
+					
 					break;
 
 				
 					
 					
 					case KeyEvent.VK_DOWN: Personaje.setLocation(x, y +5);Pies.setLocation(x,  y+5);
-					System.out.println("2");
-					if(!(collision())){
+					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8()){
 						suma++;
 					
 						
@@ -144,8 +150,7 @@ public class Juego2 extends JFrame {
 					
 					
 					case KeyEvent.VK_LEFT: Personaje.setLocation(x-5, y); Pies.setLocation(x-5,  y);
-					System.out.println("3");
-						if(!(collision())){
+					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8()){
 							suma++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviIzq1.png"));
@@ -166,8 +171,7 @@ public class Juego2 extends JFrame {
 					
 					
 					case KeyEvent.VK_RIGHT: Personaje.setLocation(x+5, y); Pies.setLocation(x+5,  y);
-					System.out.println("4");
-					if(!(collision())){
+					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8()){
 						suma++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Level1/kaviDer1.png"));
@@ -224,33 +228,42 @@ public class Juego2 extends JFrame {
 		fondo.setBounds(0, 0, 1368, 705);
 		fondo.setVisible(false);
 		
+		pared8 = new JLabel("");
+		pared8.setBounds(249, 572, 27, 65);
+		contentPane.add(pared8);
+		
+		pared7 = new JLabel("");
+		pared7.setForeground(Color.BLACK);
+		pared7.setBounds(173, 570, 27, 72);
+		contentPane.add(pared7);
+		
 		pared6 = new JLabel("");
-		pared6.setBounds(901, 588, 304, 23);
+		pared6.setBounds(914, 570, 283, 10);
 		contentPane.add(pared6);
 		
-		JLabel pared4 = new JLabel("");
-		pared4.setBackground(Color.PINK);
-		pared4.setBounds(434, 541, 683, 21);
-		contentPane.add(pared4);
-		
-		JLabel pared5 = new JLabel("");
-		pared5.setBounds(342, 586, 492, 24);
+		pared5 = new JLabel("");
+		pared5.setBounds(359, 326, 19, 213);
 		contentPane.add(pared5);
 		
-		JLabel pared3 = new JLabel("");
-		pared3.setBounds(358, 442, 387, 19);
+		pared4 = new JLabel("");
+		pared4.setBackground(Color.PINK);
+		pared4.setBounds(359, 570, 453, 6);
+		contentPane.add(pared4);
+		
+		pared3 = new JLabel("");
+		pared3.setBounds(453, 466, 361, 10);
 		contentPane.add(pared3);
 		
-		JLabel pared2 = new JLabel("");
-		pared2.setBounds(437, 488, 392, 21);
+		pared2 = new JLabel("");
+		pared2.setBounds(459, 517, 643, 13);
 		contentPane.add(pared2);
 		
-		JLabel pared1 = new JLabel("");
-		pared1.setBounds(439, 388, 487, 18);
+		pared1 = new JLabel("");
+		pared1.setBounds(371, 425, 361, 6);
 		contentPane.add(pared1);
 		
 		pared = new JLabel("");
-		pared.setBounds(80, 652, 1235, 20);
+		pared.setBounds(122, 611, 1193, 31);
 		contentPane.add(pared);
 		fondo.setIcon(new ImageIcon(Juego2.class.getResource("/Level2/laboratorio.jpg")));
 		contentPane.add(fondo);
@@ -264,7 +277,67 @@ public class Juego2 extends JFrame {
 	
 	}
 	private boolean collision(){
-		
-		return Pies.getBounds().intersects(pared.getBounds());
-	}
+		boolean resultado = false;
+		if (Pies.getBounds().intersects(pared.getBounds())){
+			resultado = true;
+		}
+			return resultado;
+		}
+	
+	private boolean collision1(){
+		boolean resultado1 = false;
+		if (Pies.getBounds().intersects(pared1.getBounds())){
+			resultado1 = true;
+		}
+			return resultado1;
+		}
+	private boolean collision2(){
+		boolean resultado2 = false;
+		if (Pies.getBounds().intersects(pared2.getBounds())){
+			resultado2 = true;
+		}
+			return resultado2;
+		}
+	private boolean collision3(){
+		boolean resultado3 = false;
+		if (Pies.getBounds().intersects(pared3.getBounds())){
+			resultado3 = true;
+		}
+			return resultado3;
+		}
+	private boolean collision4(){
+		boolean resultado4 = false;
+		if (Pies.getBounds().intersects(pared4.getBounds())){
+			resultado4 = true;
+		}
+			return resultado4;
+		}
+	private boolean collision5(){
+		boolean resultado5 = false;
+		if (Pies.getBounds().intersects(pared5.getBounds())){
+			resultado5 = true;
+		}
+			return resultado5;
+		}
+	private boolean collision6(){
+		boolean resultado6 = false;
+		if (Pies.getBounds().intersects(pared6.getBounds())){
+			resultado6 = true;
+		}
+			return resultado6;
+		}
+	private boolean collision7(){
+		boolean resultado7 = false;
+		if (Pies.getBounds().intersects(pared7.getBounds())){
+			resultado7 = true;
+		}
+			return resultado7;
+		}
+	private boolean collision8(){
+		boolean resultado8 = false;
+		if (Pies.getBounds().intersects(pared8.getBounds())){
+			resultado8 = true;
+		}
+			return resultado8;
+		}
 }

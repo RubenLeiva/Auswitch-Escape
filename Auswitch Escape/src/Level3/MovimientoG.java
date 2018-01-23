@@ -70,4 +70,56 @@ public class MovimientoG {
 		timer = new Timer();
 		timer.scheduleAtFixedRate(tarea, velmil, velmil);
 	}
-}
+	public void ejemplo(Juego3 j) {
+	
+		tarea = new TimerTask(){
+
+			public void run(){
+				
+					
+				Icon icono;
+				switch(contador){
+				case 0:
+					contador = 1;
+					icono = new ImageIcon(getClass().getResource("/Level3/Cerradura1B.png"));
+					j.Cerradura.setIcon(icono);
+					break;
+				case 1:
+					contador = 2;
+					icono = new ImageIcon(getClass().getResource("/Level3/Cerradura1M.png"));	
+					j.Cerradura.setIcon(icono);
+					break;
+				case 2:
+					contador = 3;
+					icono = new ImageIcon(getClass().getResource("/Level3/Cerradura1B.png"));	
+					j.Cerradura.setIcon(icono);
+					break;
+				case 3:
+					contador = 4;
+
+					icono = new ImageIcon(getClass().getResource("/Level3/Cerradura1M.png"));	
+					j.Cerradura.setIcon(icono);
+					break;
+				case 4:
+					contador = 5;
+					icono = new ImageIcon(getClass().getResource("/Level3/Cerradura2B.png"));	
+					j.Cerradura.setIcon(icono);
+					break;
+				case 5:
+					
+					m.Inicio(j.Ganzua);
+					break;
+
+				}
+
+
+				
+
+			}
+			
+		};
+		timer = new Timer();
+		timer.scheduleAtFixedRate(tarea, velmil, velmil);
+	}
+	}
+
