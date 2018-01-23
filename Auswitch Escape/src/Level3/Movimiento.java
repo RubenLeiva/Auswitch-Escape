@@ -39,6 +39,7 @@ public class Movimiento extends JPanel implements Runnable{
 		Ganzu = ganzua;
 		pausa= true;
 		hilo.stop();
+		activo = false;
 	}
 	
 	public void seguir(JLabel ganzua){

@@ -94,37 +94,39 @@ public class Juego3 extends JFrame {
 
 				case KeyEvent.VK_ENTER:j.Parar(Ganzua);
 					switch(caso){	
-						case 0: j.Parar(Ganzua);
+						case 0: 
 							if (Ganzua.getX() + 235 >= 442 && Ganzua.getX() + 225 <= 636 && caso == 0) {
+								j.Parar(Ganzua);
 								g.ej(Juego3.this);
 								Parte1.setVisible(false);
 								Parte2.setVisible(true);
 								caso = 1;
-								System.out.println("primer candao resulto");
+								System.out.println("primer candao resuelto");
 							}else{
 								
 		
 								JOptionPane.showMessageDialog(null, "Vuelve a intentarlo");
 							}
 						break;
-						case 1: j.Parar(Ganzua);
+						case 1:
 							if (Ganzua.getX() + 235 >= 642 && Ganzua.getX() + 225 <= 760 && caso == 1) {
+								j.Parar(Ganzua);
 								g.ejemplo(Juego3.this);
 								Parte2.setVisible(false);
 								Parte3.setVisible(true);
 								caso = 2;
-								System.out.println("segundo candao resulto");
+								System.out.println("segundo candao resuelto");
 							}else{
-									
 								
 								JOptionPane.showMessageDialog(null, "2 Vuelve a intentarlo");
 							}
 						break;
-						case 2: j.Parar(Ganzua);
+						case 2: 
 							if (Ganzua.getX() + 235 >= 242 && Ganzua.getX() + 225 <= 302 && caso == 2) {
+								j.Parar(Ganzua);
 								g.ejemplo3(Juego3.this);
 								Parte3.setVisible(false);
-								System.out.println("tercer candao resulto");
+								System.out.println("tercer candao resuelto");
 							}else{
 	
 								JOptionPane.showMessageDialog(null, "3 Vuelve a intentarlo");
