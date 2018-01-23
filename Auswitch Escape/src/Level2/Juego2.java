@@ -69,6 +69,8 @@ public class Juego2 extends JFrame {
 	private JLabel pared6;
 	private JLabel pared;
 	private JLabel pared8;
+	private JLabel pared9;
+	private JLabel pared10;
 
 	
 	public Juego2() {
@@ -101,9 +103,7 @@ public class Juego2 extends JFrame {
 					
 					case KeyEvent.VK_UP: Personaje.setLocation(x, y-5);Pies.setLocation(x, y-5);
 					Personaje.setVisible(true);
-					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8()){
-						
-						suma++;
+					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8() && !collision9() && !collision10()){						suma++;
 					
 					
 						if(suma % 2 == 0){
@@ -127,9 +127,7 @@ public class Juego2 extends JFrame {
 					
 					
 					case KeyEvent.VK_DOWN: Personaje.setLocation(x, y +5);Pies.setLocation(x,  y+5);
-					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8()){
-						suma++;
-					
+					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8() && !collision9() && !collision10()){					
 						
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kavi3.png"));
@@ -150,8 +148,7 @@ public class Juego2 extends JFrame {
 					
 					
 					case KeyEvent.VK_LEFT: Personaje.setLocation(x-5, y); Pies.setLocation(x-5,  y);
-					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8()){
-							suma++;
+					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8() && !collision9() && !collision10()){						suma++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviIzq1.png"));
 							Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
@@ -171,7 +168,7 @@ public class Juego2 extends JFrame {
 					
 					
 					case KeyEvent.VK_RIGHT: Personaje.setLocation(x+5, y); Pies.setLocation(x+5,  y);
-					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8()){
+					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8() && !collision9() && !collision10()){
 						suma++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Level1/kaviDer1.png"));
@@ -212,7 +209,7 @@ public class Juego2 extends JFrame {
 		contentPane.add(Pies);
 		
 		Personaje = new JLabel("");
-		Personaje.setBounds(0, 641, 37, 52);
+		Personaje.setBounds(76, 589, 37, 54);
 		Personaje.setVisible(false);
 		Personaje.setIcon(new ImageIcon(Juego2.class.getResource("/Ventanas/kaviD0.png")));
 		contentPane.add(Personaje);
@@ -228,8 +225,16 @@ public class Juego2 extends JFrame {
 		fondo.setBounds(0, 0, 1368, 705);
 		fondo.setVisible(false);
 		
+		pared10 = new JLabel("");
+		pared10.setBounds(185, 517, 100, 6);
+		contentPane.add(pared10);
+		
+		pared9 = new JLabel("");
+		pared9.setBounds(78, 43, 35, 524);
+		contentPane.add(pared9);
+		
 		pared8 = new JLabel("");
-		pared8.setBounds(249, 572, 27, 65);
+		pared8.setBounds(268, 565, 8, 72);
 		contentPane.add(pared8);
 		
 		pared7 = new JLabel("");
@@ -339,5 +344,19 @@ public class Juego2 extends JFrame {
 			resultado8 = true;
 		}
 			return resultado8;
+		}
+	private boolean collision9(){
+		boolean resultado9 = false;
+		if (Pies.getBounds().intersects(pared9.getBounds())){
+			resultado9 = true;
+		}
+			return resultado9;
+		}
+	private boolean collision10(){
+		boolean resultado10 = false;
+		if (Pies.getBounds().intersects(pared10.getBounds())){
+			resultado10 = true;
+		}
+			return resultado10;
 		}
 }
