@@ -87,6 +87,8 @@ public class Juego2 extends JFrame {
 	private JLabel pared24;
 	private JLabel pared25;
 	private JLabel pared26;
+	private JLabel pared27;
+	private JLabel pared28;
 
 	
 	public Juego2() {
@@ -121,7 +123,7 @@ public class Juego2 extends JFrame {
 					Personaje.setVisible(true);
 					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8() && !collision9() && !collision10()
 && !collision11()  && !collision12() && !collision13() && !collision14() && !collision15() && !collision16() && !collision17() && !collision18() && !collision19() && !collision20() && !collision21() && !collision22()
-&& !collision23()&& !collision24() && !collision25()){
+&& !collision23()&& !collision24() && !collision25() && !collision27()){
 						suma ++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviD2.png"));
@@ -146,7 +148,7 @@ public class Juego2 extends JFrame {
 					case KeyEvent.VK_DOWN: Personaje.setLocation(x, y +5);Pies.setLocation(x,  y+5);
 					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8() && !collision9() && !collision10()
 && !collision11()  && !collision12() && !collision13() && !collision14() && !collision15() && !collision16() && !collision17() && !collision18() && !collision19() && !collision20() && !collision21() && !collision22()
-&& !collision23()&& !collision24() && !collision25() && !collision26()){	
+&& !collision23()&& !collision24() && !collision25() && !collision26() && !collision27()){	
 						suma++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kavi3.png"));
@@ -169,7 +171,7 @@ public class Juego2 extends JFrame {
 					case KeyEvent.VK_LEFT: Personaje.setLocation(x-5, y); Pies.setLocation(x-5,  y);
 					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8() && !collision9() && !collision10()
 && !collision11()  && !collision12() && !collision13() && !collision14() && !collision15() && !collision16() && !collision17() && !collision18() && !collision19() && !collision20() && !collision21() && !collision22()
-&& !collision23()&& !collision24() && !collision25() && !collision26()){						
+&& !collision23()&& !collision24() && !collision25() && !collision26() && !collision27()){						
 						suma++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviIzq1.png"));
@@ -192,7 +194,7 @@ public class Juego2 extends JFrame {
 					case KeyEvent.VK_RIGHT: Personaje.setLocation(x+5, y); Pies.setLocation(x+5,  y);
 					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8() && !collision9() && !collision10()
 && !collision11()  && !collision12() && !collision13() && !collision14() && !collision15() && !collision16() && !collision17() && !collision18() && !collision19() && !collision20() && !collision21() && !collision22()
-&& !collision23() && !collision24() && !collision25()  && !collision26()){
+&& !collision23() && !collision24() && !collision25() && !collision26() && !collision27()){
 						suma++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Level1/kaviDer1.png"));
@@ -248,6 +250,14 @@ public class Juego2 extends JFrame {
 		fondo = new JLabel("");
 		fondo.setBounds(0, 0, 1368, 705);
 		fondo.setVisible(false);
+		
+		pared28 = new JLabel("");
+		pared28.setBounds(0, 0, 46, 14);
+		contentPane.add(pared28);
+		
+		pared27 = new JLabel("");
+		pared27.setBounds(713, 502, 19, 31);
+		contentPane.add(pared27);
 		
 		pared26 = new JLabel("");
 		pared26.setBounds(543, 371, 6, 48);
@@ -558,6 +568,13 @@ public class Juego2 extends JFrame {
 			resultado26 = true;
 		}
 			return resultado26;
+		}
+	private boolean collision27(){
+		boolean resultado27 = false;
+		if (Pies.getBounds().intersects(pared27.getBounds())){
+			resultado27 = true;
+		}
+			return resultado27;
 		}
 	
 }
