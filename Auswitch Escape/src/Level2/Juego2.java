@@ -112,35 +112,15 @@ public class Juego2 extends JFrame {
 					}else{Personaje.setLocation(x, y+25);}
 					
 
-					case KeyEvent.VK_DOWN: Personaje.setLocation(x, y+25);
-
-					
-					
-					if(suma % 2 == 0){
-						ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviD2.png"));
-						Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
-						Personaje.setIcon(ch);
-						
-						
-						
-					}else{
-						ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviD3.png"));
-						Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
-						Personaje.setIcon(ch);
-						
-						
-						
-					}
-					break;
+				
 					
 					
 					case KeyEvent.VK_DOWN: Personaje.setLocation(x, y +5);Pies.setLocation(x,  y+5);
 					
 					if(!(collision())){
->>>>>>> branch 'master' of https://github.com/RubenLeiva/Auswitch-Escape
+
 					suma++;
-<<<<<<< HEAD
-					if(!(Personaje.getBounds().intersects(fuego.getBounds()))){	
+						
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kavi3.png"));
 							Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
@@ -151,30 +131,19 @@ public class Juego2 extends JFrame {
 							Personaje.setIcon(ch);
 						}
 						break;
-					}else{Personaje.setLocation(x, y-25);}
-					case KeyEvent.VK_LEFT: Personaje.setLocation(x-25, y);
-=======
-					if(suma % 2 == 0){
-						ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kavi3.png"));
-						Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
-						Personaje.setIcon(ch);
-					}else{
-						ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kavi4.png"));
-						Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
-						Personaje.setIcon(ch);
-					}
 					}else{
 						Personaje.setLocation(x, y-5);
-						Pies.setLocation(x, y -5);
+						Pies.setLocation(x,  y-5);
 					}
-					break;
+					
+				
 					
 					
 					case KeyEvent.VK_LEFT: Personaje.setLocation(x-5, y); Pies.setLocation(x-5,  y);
->>>>>>> branch 'master' of https://github.com/RubenLeiva/Auswitch-Escape
+
 					suma++;
-<<<<<<< HEAD
-					if(!(Personaje.getBounds().intersects(fuego.getBounds()))){	
+
+						if(!(collision())){
 
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviIzq1.png"));
@@ -186,38 +155,15 @@ public class Juego2 extends JFrame {
 							Personaje.setIcon(ch);
 						}
 						break;
-					}else{Personaje.setLocation(x+25, y);}
-					case KeyEvent.VK_RIGHT: Personaje.setLocation(x+25,y);
-					suma++;
-					if(!(Personaje.getBounds().intersects(fuego.getBounds()))){	
-						if(suma % 2 == 0){
-							ImageIcon icono = new ImageIcon(getClass().getResource("/Level1/kaviDer1.png"));
-							Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
-							Personaje.setIcon(ch);
-						}else{
-							ImageIcon icono = new ImageIcon(getClass().getResource("/Level1/kaviDer2.png"));
-							Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
-							Personaje.setIcon(ch);
-						}
-						break;
-					}else{Personaje.setLocation(x-25, y);}
-
-=======
-					
-					if(suma % 2 == 0){
-						ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviIzq1.png"));
-						Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
-						Personaje.setIcon(ch);
 					}else{
-						ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviIzq2.png"));
-						Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
-						Personaje.setIcon(ch);
+						Personaje.setLocation(x+5, y);
+						Pies.setLocation(x,  y+5);
 					}
-					break;
 					
 					
 					
-						case KeyEvent.VK_RIGHT: Personaje.setLocation(x+5, y); Pies.setLocation(x+5,  y);
+					
+					case KeyEvent.VK_RIGHT: Personaje.setLocation(x+5, y); Pies.setLocation(x+5,  y);
 						if(!(collision())){
 						suma++;
 						
@@ -238,8 +184,7 @@ public class Juego2 extends JFrame {
 						}
 						break;
 					
->>>>>>> branch 'master' of https://github.com/RubenLeiva/Auswitch-Escape
-					
+
 				}
 				
 			}
@@ -255,8 +200,7 @@ public class Juego2 extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-<<<<<<< HEAD
-=======
+
 		Pies = new JLabel("");
 		Pies.setBounds(0, 673, 37, 20);
 		Pies.setVisible(false);
@@ -274,14 +218,6 @@ public class Juego2 extends JFrame {
 		Reloj.setBounds(632, 0, 187, 59);
 		contentPane.add(Reloj);
 		
->>>>>>> branch 'master' of https://github.com/RubenLeiva/Auswitch-Escape
-		
-		fuego = new JLabel("");
-		fuego.setBounds(102, 444, 77, 87);
-		fuego.setIcon(null);
-		fuego.setBackground(Color.GRAY);
-		fuego.setForeground(Color.BLACK);
-		fuego.setVisible(false);
 		
 		fondo = new JLabel("");
 		fondo.setBounds(0, 0, 1368, 705);
