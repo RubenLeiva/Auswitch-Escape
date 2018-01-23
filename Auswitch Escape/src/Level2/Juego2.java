@@ -59,7 +59,7 @@ public class Juego2 extends JFrame {
 	Icon icono;
 	Icon icono2;
 	Icon icono1;
-	private JLabel fuego;
+
 	private JLabel pared6;
 	private JLabel pared;
 
@@ -83,9 +83,8 @@ public class Juego2 extends JFrame {
 				
 					case KeyEvent.VK_SPACE: Inicio.setVisible(false);
 					j.Inicio(Reloj);
-					ImageIcon icono2 = new ImageIcon(getClass().getResource("/Level2/fuego.gif"));
-						Icon cho = new ImageIcon(icono2.getImage().getScaledInstance(fuego.getWidth(), fuego.getHeight(), Image.SCALE_DEFAULT));
-						fuego.setIcon(cho);
+					
+					
 						
 						ImageIcon icono1 = new ImageIcon(getClass().getResource("/Level2/laboratorio.jpg"));
 						Icon chos = new ImageIcon(icono1.getImage().getScaledInstance(fondo.getWidth(), fondo.getHeight(), Image.SCALE_DEFAULT));
@@ -94,11 +93,12 @@ public class Juego2 extends JFrame {
 						fondo.setVisible(true);
 					
 					case KeyEvent.VK_UP: Personaje.setLocation(x, y-5);Pies.setLocation(x, y-5);
-					
 					Personaje.setVisible(true);
-					fuego.setVisible(true);
 					suma++;
-					if(!(Personaje.getBounds().intersects(fuego.getBounds()))){	
+					if(!(collision())){
+					
+					
+					
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviD2.png"));
 							Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
@@ -109,17 +109,20 @@ public class Juego2 extends JFrame {
 							Personaje.setIcon(ch);
 						}
 						break;
-					}else{Personaje.setLocation(x, y+25);}
+					}else{
+					Personaje.setLocation(x, y+5);
+					Pies.setLocation(x, y-5);
+					}
 					
 
 				
 					
 					
 					case KeyEvent.VK_DOWN: Personaje.setLocation(x, y +5);Pies.setLocation(x,  y+5);
-					
+					suma++;
 					if(!(collision())){
 
-					suma++;
+					
 						
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kavi3.png"));
@@ -164,8 +167,9 @@ public class Juego2 extends JFrame {
 					
 					
 					case KeyEvent.VK_RIGHT: Personaje.setLocation(x+5, y); Pies.setLocation(x+5,  y);
-						if(!(collision())){
-						suma++;
+					suma++;	
+					if(!(collision())){
+						
 						
 						
 						if(suma % 2 == 0){
@@ -253,13 +257,6 @@ public class Juego2 extends JFrame {
 		contentPane.add(pared);
 		fondo.setIcon(new ImageIcon(Juego2.class.getResource("/Level2/laboratorio.jpg")));
 		contentPane.add(fondo);
-		contentPane.add(fuego);
-		
-		Personaje = new JLabel("");
-		Personaje.setVisible(false);
-		Personaje.setIcon(new ImageIcon(Juego2.class.getResource("/Ventanas/kaviD0.png")));
-		Personaje.setBounds(-44, 557, 136, 148);
-		contentPane.add(Personaje);
 		
 		Inicio = new JLabel("");
 		Inicio.setBounds(0, 0, 1354, 705);
