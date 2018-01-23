@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Extra.CuentaAtras;
+import Extra.ResultTiempos;
 import Level2.Juego2;
 import Ventanas.PrimeraVentana;
 
@@ -28,6 +29,7 @@ public class Juego extends JFrame {
 	private JLabel Inicio;
 	private JLabel FinCompletado;
 	private JLabel Reloj;
+	public int time;
 	CuentaAtras j = new CuentaAtras();
 	PrimeraVentana p = new PrimeraVentana();
 	Juego2 c = new Juego2();
@@ -87,6 +89,7 @@ public class Juego extends JFrame {
 						Kavi.setVisible(false);
 						j.Fin(Reloj);
 						j.Acabar(Reloj);
+						time = Integer.parseInt(Reloj.getText());
 						
 						
 						

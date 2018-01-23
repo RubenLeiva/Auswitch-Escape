@@ -30,6 +30,7 @@ public class Juego2 extends JFrame {
 	private JLabel fondo;
 	public JLabel Reloj;
 	private JLabel Pies;
+	public int time;
 	CuentaAtras j = new CuentaAtras();
 	
 	/**
@@ -94,7 +95,6 @@ public class Juego2 extends JFrame {
 					
 					case KeyEvent.VK_UP: Personaje.setLocation(x, y-5);Pies.setLocation(x, y-5);
 					Personaje.setVisible(true);
-					System.out.println("1");
 			
 					if(!(collision())){
 						suma++;
@@ -120,7 +120,6 @@ public class Juego2 extends JFrame {
 					
 					
 					case KeyEvent.VK_DOWN: Personaje.setLocation(x, y +5);Pies.setLocation(x,  y+5);
-					System.out.println("2");
 					if(!(collision())){
 						suma++;
 					
@@ -144,7 +143,6 @@ public class Juego2 extends JFrame {
 					
 					
 					case KeyEvent.VK_LEFT: Personaje.setLocation(x-5, y); Pies.setLocation(x-5,  y);
-					System.out.println("3");
 						if(!(collision())){
 							suma++;
 						if(suma % 2 == 0){
@@ -166,7 +164,6 @@ public class Juego2 extends JFrame {
 					
 					
 					case KeyEvent.VK_RIGHT: Personaje.setLocation(x+5, y); Pies.setLocation(x+5,  y);
-					System.out.println("4");
 					if(!(collision())){
 						suma++;
 						if(suma % 2 == 0){
@@ -264,7 +261,11 @@ public class Juego2 extends JFrame {
 	
 	}
 	private boolean collision(){
+		boolean resultado = false;
+		if (Pies.getBounds().intersects(pared.getBounds())){
+			resultado = true;
+		}
 		
-		return Pies.getBounds().intersects(pared.getBounds());
+		return resultado;
 	}
 }

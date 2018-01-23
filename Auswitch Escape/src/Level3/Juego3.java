@@ -31,6 +31,7 @@ public class Juego3 extends JFrame {
 	public JLabel Ganzua;
 	private JLabel Fondo;
 	private JLabel Parte1;
+	private int caso=0;
 	Movimiento j = new Movimiento();
 	MovimientoG g= new MovimientoG();
 
@@ -62,7 +63,7 @@ public class Juego3 extends JFrame {
 
 				switch (e.getExtendedKeyCode()) {
 
-				case KeyEvent.VK_SPACE:
+				case KeyEvent.VK_SPACE :
 					Inicio.setVisible(false);
 
 					ImageIcon icono2 = new ImageIcon(getClass().getResource("/Level3/fondo madera.jpg"));
