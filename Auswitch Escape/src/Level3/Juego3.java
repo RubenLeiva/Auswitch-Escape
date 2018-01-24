@@ -127,6 +127,7 @@ public class Juego3 extends JFrame {
 								g.ejemplo3(Juego3.this);
 								Parte3.setVisible(false);
 								System.out.println("tercer candao resuelto");
+								
 							}else{
 	
 								JOptionPane.showMessageDialog(null, "3 Vuelve a intentarlo");

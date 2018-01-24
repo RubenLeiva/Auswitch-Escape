@@ -6,8 +6,10 @@ import java.util.TimerTask;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import Level1.Comic;
+import fin.VentanaRank;
 
 public class MovimientoG {
 
@@ -19,7 +21,9 @@ public class MovimientoG {
 	int contador2 = 0;
 	int contador3 = 0;
 	Movimiento m = new Movimiento();
+	VentanaRank vr = new VentanaRank();
 	Timer timer;
+	Object[] object ={"Sí, porfavor", "No, gracias"};
 	public void ej(Juego3 j){
 		
 		
@@ -164,8 +168,13 @@ public class MovimientoG {
 					j.Cerradura.setIcon(icono);
 					break;
 				case 6:
+					JOptionPane.showMessageDialog(null, "Vamos al ranking!", "Mensaje", JOptionPane.PLAIN_MESSAGE);
+					contador3 = 7;
 					break;
-
+				case 7:
+					vr.setVisible(true);
+					j.dispose();
+					break;
 				}
 
 
