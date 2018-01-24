@@ -49,7 +49,7 @@ public class VentanaRank extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		
 		String[] columnas = {"Posicion", "Nombre", "Tiempo"};
-		Object[][] data= {{new Integer(1), "Almorrana", new Double(100.3)},
+		Object[][] data= {{new Integer(1), "Francisco", new Double(100.3)},
 				{new Integer(2), "Pedro", new Double(132.45)}};
 		JTable table = new JTable(data, columnas);
 		panel.setLayout(new BorderLayout());
