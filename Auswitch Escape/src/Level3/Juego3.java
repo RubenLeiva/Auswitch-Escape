@@ -31,6 +31,9 @@ public class Juego3 extends JFrame {
 	public JLabel Ganzua;
 	private JLabel Fondo;
 	private JLabel Parte1;
+	private JLabel Parte2;
+	private JLabel Parte3;
+	private int caso=0;
 	Movimiento j = new Movimiento();
 	MovimientoG g= new MovimientoG();
 
@@ -62,8 +65,9 @@ public class Juego3 extends JFrame {
 
 				switch (e.getExtendedKeyCode()) {
 
-				case KeyEvent.VK_SPACE:
+				case KeyEvent.VK_SPACE :
 					Inicio.setVisible(false);
+					
 
 					ImageIcon icono2 = new ImageIcon(getClass().getResource("/Level3/fondo madera.jpg"));
 					Icon cho = new ImageIcon(icono2.getImage().getScaledInstance(Barra.getWidth(), Barra.getHeight(),
@@ -83,21 +87,53 @@ public class Juego3 extends JFrame {
 							Image.SCALE_DEFAULT));
 					Fondo.setIcon(ch);
 					Fondo.setVisible(true);
-
 					Parte1.setVisible(true);
 					j.Inicio(Ganzua);
-
+					
 					break;
 
 				case KeyEvent.VK_ENTER:j.Parar(Ganzua);
-
-					if (Ganzua.getX()+235 >= 442 && Ganzua.getX()+235 <= 636) {
-					g.ej(Juego3.this);
-					
-					}else{
+					switch(caso){	
+						case 0: 
+							if (Ganzua.getX() + 235 >= 442 && Ganzua.getX() + 225 <= 636 && caso == 0) {
+								j.Parar(Ganzua);
+								g.ej(Juego3.this);
+								Parte1.setVisible(false);
+								Parte2.setVisible(true);
+								caso = 1;
+								System.out.println("primer candao resuelto");
+							}else{
+								
+		
+								JOptionPane.showMessageDialog(null, "Vuelve a intentarlo");
+							}
+						break;
+						case 1:
+							if (Ganzua.getX() + 235 >= 642 && Ganzua.getX() + 225 <= 760 && caso == 1) {
+								j.Parar(Ganzua);
+								g.ejemplo(Juego3.this);
+								Parte2.setVisible(false);
+								Parte3.setVisible(true);
+								caso = 2;
+								System.out.println("segundo candao resuelto");
+							}else{
+								
+								JOptionPane.showMessageDialog(null, "2 Vuelve a intentarlo");
+							}
+						break;
+						case 2: 
+							if (Ganzua.getX() + 235 >= 242 && Ganzua.getX() + 225 <= 302 && caso == 2) {
+								j.Parar(Ganzua);
+								g.ejemplo3(Juego3.this);
+								Parte3.setVisible(false);
+								System.out.println("tercer candao resuelto");
+								
+							}else{
+	
+								JOptionPane.showMessageDialog(null, "3 Vuelve a intentarlo");
+							}
+						break;
 						
-				g.ejemplo(Juego3.this);
-					
 					}
 					break;
 				}
@@ -135,6 +171,22 @@ public class Juego3 extends JFrame {
 		Parte1.setBackground(Color.GREEN);
 		Parte1.setBounds(442, 613, 194, 47);
 		contentPane.add(Parte1);
+		
+		Parte2 = new JLabel("");
+		Parte2.setVisible(false);
+		Parte2.setIcon(new ImageIcon(Juego3.class.getResource("/Level3/verde.gif")));
+		Parte2.setForeground(Color.GREEN);
+		Parte2.setBackground(Color.GREEN);
+		Parte2.setBounds(642, 613, 120, 47);
+		contentPane.add(Parte2);
+		
+		Parte3 = new JLabel("");
+		Parte3.setVisible(false);
+		Parte3.setIcon(new ImageIcon(Juego3.class.getResource("/Level3/verde.gif")));
+		Parte3.setForeground(Color.GREEN);
+		Parte3.setBackground(Color.GREEN);
+		Parte3.setBounds(242, 613, 60, 47);
+		contentPane.add(Parte3);
 
 		Barra.setIcon(new ImageIcon(Juego3.class.getResource("/Level3/Fondo Juego3.jpg")));
 		Barra.setBackground(Color.BLUE);

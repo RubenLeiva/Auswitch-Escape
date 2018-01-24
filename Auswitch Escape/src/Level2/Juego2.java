@@ -30,6 +30,9 @@ public class Juego2 extends JFrame {
 	private JLabel fondo;
 	public JLabel Reloj;
 	private JLabel Pies;
+
+	public int time;
+
 	private JLabel pared1;
 	private JLabel pared2;
 	private JLabel pared3;
@@ -149,6 +152,7 @@ public class Juego2 extends JFrame {
 					
 					case KeyEvent.VK_UP: Personaje.setLocation(x, y-5);Pies.setLocation(x, y-5);
 					Personaje.setVisible(true);
+
 					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8() && !collision9() && !collision10()
 && !collision11()  && !collision12() && !collision13() && !collision14() && !collision15() && !collision16() && !collision17() && !collision18() && !collision19() && !collision20() && !collision21() && !collision22()
 && !collision23()&& !collision24() && !collision25() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31()  && !collision32() && !collision33()
@@ -177,13 +181,16 @@ public class Juego2 extends JFrame {
 					
 					
 					case KeyEvent.VK_DOWN: Personaje.setLocation(x, y +5);Pies.setLocation(x,  y+5);
+
 					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8() && !collision9() && !collision10()
 && !collision11()  && !collision12() && !collision13() && !collision14() && !collision15() && !collision16() && !collision17() && !collision18() && !collision19() && !collision20() && !collision21() && !collision22()
+
 && !collision23()&& !collision24() && !collision25() && !collision26() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31()  && !collision32() && !collision33()
 && !collision34() && !collision35() && !collision36() && !collision37() && !collision38() && !collision39() && !collision40() && !collision41() && !collision42() && !collision43() && !collision44()
 && !collision45() && !collision46() && !collision47() && !collision48() && !collision49() && !collision50() && !collision51() && !collision52() && !collision53() && !collision54() && !collision55()
 && !collision56() && !collision57()){	
 						suma++;
+
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kavi3.png"));
 							Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
@@ -202,7 +209,9 @@ public class Juego2 extends JFrame {
 				
 					
 					
+
 					case KeyEvent.VK_LEFT: Personaje.setLocation(x-5, y); Pies.setLocation(x-5,  y);
+
 					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8() && !collision9() && !collision10()
 && !collision11()  && !collision12() && !collision13() && !collision14() && !collision15() && !collision16() && !collision17() && !collision18() && !collision19() && !collision20() && !collision21() && !collision22()
 && !collision23()&& !collision24() && !collision25() && !collision26() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31()  && !collision32() && !collision33()
@@ -210,6 +219,7 @@ public class Juego2 extends JFrame {
 && !collision45() && !collision46() && !collision47() && !collision48() && !collision49() && !collision50() && !collision51() && !collision52() && !collision53() && !collision54() && !collision55()
 && !collision56() && !collision57()){						
 						suma++;
+
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviIzq1.png"));
 							Icon ch = new ImageIcon(icono.getImage().getScaledInstance(Personaje.getWidth(), Personaje.getHeight(), Image.SCALE_DEFAULT));
@@ -229,6 +239,7 @@ public class Juego2 extends JFrame {
 					
 					
 					case KeyEvent.VK_RIGHT: Personaje.setLocation(x+5, y); Pies.setLocation(x+5,  y);
+
 					if(!collision() && !collision1() && !collision2() && !collision3() && !collision4() && !collision5() && !collision6() && !collision7() && !collision8() && !collision9() && !collision10()
 && !collision11()  && !collision12() && !collision13() && !collision14() && !collision15() && !collision16() && !collision17() && !collision18() && !collision19() && !collision20() && !collision21() && !collision22()
 && !collision23() && !collision24() && !collision25() && !collision26() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31() && !collision32() && !collision33()
@@ -540,8 +551,13 @@ public class Juego2 extends JFrame {
 		if (Pies.getBounds().intersects(pared.getBounds())){
 			resultado = true;
 		}
-			return resultado;
-		}
+
+		
+		return resultado;
+	}
+
+	
+		
 	
 	private boolean collision1(){
 		boolean resultado1 = false;
@@ -620,6 +636,7 @@ public class Juego2 extends JFrame {
 		}
 			return resultado11;
 		}
+
 	private boolean collision12(){
 		boolean resultado12 = false;
 		if (Pies.getBounds().intersects(pared12.getBounds())){
