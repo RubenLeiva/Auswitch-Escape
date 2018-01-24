@@ -37,7 +37,7 @@ public class BD {
 		ResultSet rs;
 		
 		
-		int temp = ResultTiempos.totaltiempo();
+		int temp = ResultTiempos.getTiempo();
 		//stmt.executeUpdate("INSERT INTO RANKING VALUES (1, 'AAA', '"+ temp +" ')");
 		stmt.executeUpdate("UPDATE RANKING SET TIEMPO = '"+temp+"' where NOMBRE = 'AAA'");
 		rs=stmt.executeQuery("SELECT  TIEMPO FROM RANKING WHERE NOMBRE = 'AAA'");
