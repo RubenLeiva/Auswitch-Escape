@@ -113,6 +113,11 @@ public class Juego2 extends JFrame {
 	private JLabel pared50;
 	private JLabel pared51;
 	private JLabel pared52;
+	private JLabel pared53;
+	private JLabel pared54;
+	private JLabel pared55;
+	private JLabel pared56;
+	private JLabel pared57;
 	
 	public Juego2() {
 		
@@ -148,7 +153,8 @@ public class Juego2 extends JFrame {
 && !collision11()  && !collision12() && !collision13() && !collision14() && !collision15() && !collision16() && !collision17() && !collision18() && !collision19() && !collision20() && !collision21() && !collision22()
 && !collision23()&& !collision24() && !collision25() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31()  && !collision32() && !collision33()
 && !collision34() && !collision35() && !collision36() && !collision37() && !collision38() && !collision39() && !collision40() && !collision41() && !collision42() && !collision43() && !collision44()
-&& !collision45() && !collision46() && !collision47() && !collision48() && !collision49() && !collision50() && !collision51() && !collision52()){
+&& !collision45() && !collision46() && !collision47() && !collision48() && !collision49() && !collision50() && !collision51() && !collision52() && !collision53() && !collision54() && !collision55()
+&& !collision56() && !collision57()){
 						suma ++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviD2.png"));
@@ -175,7 +181,8 @@ public class Juego2 extends JFrame {
 && !collision11()  && !collision12() && !collision13() && !collision14() && !collision15() && !collision16() && !collision17() && !collision18() && !collision19() && !collision20() && !collision21() && !collision22()
 && !collision23()&& !collision24() && !collision25() && !collision26() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31()  && !collision32() && !collision33()
 && !collision34() && !collision35() && !collision36() && !collision37() && !collision38() && !collision39() && !collision40() && !collision41() && !collision42() && !collision43() && !collision44()
-&& !collision45() && !collision46() && !collision47() && !collision48() && !collision49() && !collision50() && !collision51() && !collision52()){	
+&& !collision45() && !collision46() && !collision47() && !collision48() && !collision49() && !collision50() && !collision51() && !collision52() && !collision53() && !collision54() && !collision55()
+&& !collision56() && !collision57()){	
 						suma++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kavi3.png"));
@@ -200,7 +207,8 @@ public class Juego2 extends JFrame {
 && !collision11()  && !collision12() && !collision13() && !collision14() && !collision15() && !collision16() && !collision17() && !collision18() && !collision19() && !collision20() && !collision21() && !collision22()
 && !collision23()&& !collision24() && !collision25() && !collision26() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31()  && !collision32() && !collision33()
 && !collision34() && !collision35() && !collision36() && !collision37() && !collision38() && !collision39() && !collision40() && !collision41() && !collision42() && !collision43() && !collision44()
-&& !collision45() && !collision46() && !collision47() && !collision48() && !collision49() && !collision50() && !collision51() && !collision52()){						
+&& !collision45() && !collision46() && !collision47() && !collision48() && !collision49() && !collision50() && !collision51() && !collision52() && !collision53() && !collision54() && !collision55()
+&& !collision56() && !collision57()){						
 						suma++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviIzq1.png"));
@@ -225,7 +233,8 @@ public class Juego2 extends JFrame {
 && !collision11()  && !collision12() && !collision13() && !collision14() && !collision15() && !collision16() && !collision17() && !collision18() && !collision19() && !collision20() && !collision21() && !collision22()
 && !collision23() && !collision24() && !collision25() && !collision26() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31() && !collision32() && !collision33()
 && !collision34() && !collision35() && !collision36() && !collision37() && !collision38() && !collision39() && !collision40() && !collision41() && !collision42() && !collision43() && !collision44()
-&& !collision45() && !collision46() && !collision47() && !collision48() && !collision49() && !collision50() && !collision51() && !collision52()){
+&& !collision45() && !collision46() && !collision47() && !collision48() && !collision49() && !collision50() && !collision51() && !collision52() && !collision53() && !collision54() && !collision55()
+&& !collision56() && !collision57()){
 						suma++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Level1/kaviDer1.png"));
@@ -281,6 +290,26 @@ public class Juego2 extends JFrame {
 		fondo = new JLabel("");
 		fondo.setBounds(0, 0, 1368, 705);
 		fondo.setVisible(false);
+		
+		pared57 = new JLabel("");
+		pared57.setBounds(726, 565, 9, 54);
+		contentPane.add(pared57);
+		
+		pared56 = new JLabel("");
+		pared56.setBounds(1187, 529, 6, 54);
+		contentPane.add(pared56);
+		
+		pared55 = new JLabel("");
+		pared55.setBounds(1187, 524, 141, 9);
+		contentPane.add(pared55);
+		
+		pared54 = new JLabel("");
+		pared54.setBounds(827, 430, 2, 43);
+		contentPane.add(pared54);
+		
+		pared53 = new JLabel("");
+		pared53.setBounds(831, 424, 176, 5);
+		contentPane.add(pared53);
 		
 		pared52 = new JLabel("");
 		pared52.setBounds(925, 470, 274, 5);
@@ -877,5 +906,40 @@ public class Juego2 extends JFrame {
 			resultado52 = true;
 		}
 			return resultado52;
+		}
+	private boolean collision53(){
+		boolean resultado53= false;
+		if (Pies.getBounds().intersects(pared53.getBounds())){
+			resultado53 = true;
+		}
+			return resultado53;
+		}
+	private boolean collision54(){
+		boolean resultado54= false;
+		if (Pies.getBounds().intersects(pared54.getBounds())){
+			resultado54 = true;
+		}
+			return resultado54;
+		}
+	private boolean collision55(){
+		boolean resultado55= false;
+		if (Pies.getBounds().intersects(pared55.getBounds())){
+			resultado55 = true;
+		}
+			return resultado55;
+		}
+	private boolean collision56(){
+		boolean resultado56= false;
+		if (Pies.getBounds().intersects(pared56.getBounds())){
+			resultado56 = true;
+		}
+			return resultado56;
+		}
+	private boolean collision57(){
+		boolean resultado57= false;
+		if (Pies.getBounds().intersects(pared57.getBounds())){
+			resultado57 = true;
+		}
+			return resultado57;
 		}
 }
