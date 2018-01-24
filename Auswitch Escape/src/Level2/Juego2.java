@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Extra.CuentaAtras;
+import Level3.Juego3;
 
 import javax.swing.JLabel;
 import javax.swing.Icon;
@@ -159,7 +160,7 @@ public class Juego2 extends JFrame {
 && !collision23()&& !collision24() && !collision25() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31()  && !collision32() && !collision33()
 && !collision34() && !collision35() && !collision36() && !collision37() && !collision38() && !collision39() && !collision40() && !collision41() && !collision42() && !collision43() && !collision44()
 && !collision45() && !collision46() && !collision47() && !collision48() && !collision49() && !collision50() && !collision51() && !collision52() && !collision53() && !collision54() && !collision55()
-&& !collision56() && !collision57() && !collision58()){
+&& !collision56() && !collision57()){
 						suma ++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviD2.png"));
@@ -189,7 +190,7 @@ public class Juego2 extends JFrame {
 && !collision23()&& !collision24() && !collision25() && !collision26() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31()  && !collision32() && !collision33()
 && !collision34() && !collision35() && !collision36() && !collision37() && !collision38() && !collision39() && !collision40() && !collision41() && !collision42() && !collision43() && !collision44()
 && !collision45() && !collision46() && !collision47() && !collision48() && !collision49() && !collision50() && !collision51() && !collision52() && !collision53() && !collision54() && !collision55()
-&& !collision56() && !collision57() && !collision58()){	
+&& !collision56() && !collision57()){	
 						suma++;
 
 						if(suma % 2 == 0){
@@ -218,7 +219,7 @@ public class Juego2 extends JFrame {
 && !collision23()&& !collision24() && !collision25() && !collision26() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31()  && !collision32() && !collision33()
 && !collision34() && !collision35() && !collision36() && !collision37() && !collision38() && !collision39() && !collision40() && !collision41() && !collision42() && !collision43() && !collision44()
 && !collision45() && !collision46() && !collision47() && !collision48() && !collision49() && !collision50() && !collision51() && !collision52() && !collision53() && !collision54() && !collision55()
-&& !collision56() && !collision57() && !collision58()){						
+&& !collision56() && !collision57() ){						
 						suma++;
 
 						if(suma % 2 == 0){
@@ -246,7 +247,7 @@ public class Juego2 extends JFrame {
 && !collision23() && !collision24() && !collision25() && !collision26() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31() && !collision32() && !collision33()
 && !collision34() && !collision35() && !collision36() && !collision37() && !collision38() && !collision39() && !collision40() && !collision41() && !collision42() && !collision43() && !collision44()
 && !collision45() && !collision46() && !collision47() && !collision48() && !collision49() && !collision50() && !collision51() && !collision52() && !collision53() && !collision54() && !collision55()
-&& !collision56() && !collision57() && !collision58()){
+&& !collision56() && !collision57() ){
 						suma++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Level1/kaviDer1.png"));
@@ -262,6 +263,11 @@ public class Juego2 extends JFrame {
 							Personaje.setLocation(x-5, y);
 							Pies.setLocation(x-5, y);
 						}
+					if( collision58()){
+						Juego3 fin = new Juego3();
+						fin.setVisible(true);
+						dispose();
+					}
 						break;
 					
 
@@ -304,7 +310,7 @@ public class Juego2 extends JFrame {
 		fondo.setVisible(false);
 		
 		pared58 = new JLabel("");
-		pared58.setBounds(243, 249, 53, 456);
+		pared58.setBounds(1290, 11, 53, 116);
 		contentPane.add(pared58);
 		
 		pared57 = new JLabel("");
