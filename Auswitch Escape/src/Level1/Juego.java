@@ -90,6 +90,7 @@ public class Juego extends JFrame {
 						j.Fin(Reloj);
 						j.Acabar(Reloj);
 						time = Integer.parseInt(Reloj.getText());
+//						ResultTiempos.this.setTiempo(time);
 						
 						
 						
