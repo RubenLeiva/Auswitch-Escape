@@ -95,13 +95,13 @@ public class Juego3 extends JFrame {
 				case KeyEvent.VK_ENTER:j.Parar(Ganzua);
 					switch(caso){	
 						case 0: 
-							if (Ganzua.getX() + 235 >= 442 && Ganzua.getX() + 225 <= 636 && caso == 0) {
+							caso = 1;
+							if (Ganzua.getX() + 235 >= 442 && Ganzua.getX() + 225 <= 636 && caso == 1) {
 								j.Parar(Ganzua);
 								g.ej(Juego3.this);
 								Parte1.setVisible(false);
 								Parte2.setVisible(true);
-								caso = 1;
-								System.out.println("primer candao resuelto");
+								System.out.println("primer candado resuelto");
 							}else{
 								
 		
@@ -109,24 +109,25 @@ public class Juego3 extends JFrame {
 							}
 						break;
 						case 1:
-							if (Ganzua.getX() + 235 >= 642 && Ganzua.getX() + 225 <= 760 && caso == 1) {
+							caso = 2;
+							if (Ganzua.getX() + 235 >= 642 && Ganzua.getX() + 225 <= 760 && caso == 2) {
 								j.Parar(Ganzua);
 								g.ejemplo(Juego3.this);
 								Parte2.setVisible(false);
 								Parte3.setVisible(true);
-								caso = 2;
-								System.out.println("segundo candao resuelto");
+								System.out.println("segundo candado resuelto");
 							}else{
 								
-								JOptionPane.showMessageDialog(null, "2 Vuelve a intentarlo");
+								JOptionPane.showMessageDialog(null, "Vuelve a intentarlo");
 							}
 						break;
 						case 2: 
-							if (Ganzua.getX() + 235 >= 242 && Ganzua.getX() + 225 <= 302 && caso == 2) {
+							caso=3;
+							if (Ganzua.getX() + 235 >= 242 && Ganzua.getX() + 225 <= 302 && caso == 3) {
 								j.Parar(Ganzua);
 								g.ejemplo3(Juego3.this);
 								Parte3.setVisible(false);
-								System.out.println("tercer candao resuelto");
+								System.out.println("tercer candado resuelto");
 								
 							}else{
 	

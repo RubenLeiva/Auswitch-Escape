@@ -121,6 +121,7 @@ public class Juego2 extends JFrame {
 	private JLabel pared55;
 	private JLabel pared56;
 	private JLabel pared57;
+	private JLabel pared58;
 	
 	public Juego2() {
 		
@@ -158,7 +159,7 @@ public class Juego2 extends JFrame {
 && !collision23()&& !collision24() && !collision25() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31()  && !collision32() && !collision33()
 && !collision34() && !collision35() && !collision36() && !collision37() && !collision38() && !collision39() && !collision40() && !collision41() && !collision42() && !collision43() && !collision44()
 && !collision45() && !collision46() && !collision47() && !collision48() && !collision49() && !collision50() && !collision51() && !collision52() && !collision53() && !collision54() && !collision55()
-&& !collision56() && !collision57()){
+&& !collision56() && !collision57() && !collision58()){
 						suma ++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Ventanas/kaviD2.png"));
@@ -188,7 +189,7 @@ public class Juego2 extends JFrame {
 && !collision23()&& !collision24() && !collision25() && !collision26() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31()  && !collision32() && !collision33()
 && !collision34() && !collision35() && !collision36() && !collision37() && !collision38() && !collision39() && !collision40() && !collision41() && !collision42() && !collision43() && !collision44()
 && !collision45() && !collision46() && !collision47() && !collision48() && !collision49() && !collision50() && !collision51() && !collision52() && !collision53() && !collision54() && !collision55()
-&& !collision56() && !collision57()){	
+&& !collision56() && !collision57() && !collision58()){	
 						suma++;
 
 						if(suma % 2 == 0){
@@ -217,7 +218,7 @@ public class Juego2 extends JFrame {
 && !collision23()&& !collision24() && !collision25() && !collision26() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31()  && !collision32() && !collision33()
 && !collision34() && !collision35() && !collision36() && !collision37() && !collision38() && !collision39() && !collision40() && !collision41() && !collision42() && !collision43() && !collision44()
 && !collision45() && !collision46() && !collision47() && !collision48() && !collision49() && !collision50() && !collision51() && !collision52() && !collision53() && !collision54() && !collision55()
-&& !collision56() && !collision57()){						
+&& !collision56() && !collision57() && !collision58()){						
 						suma++;
 
 						if(suma % 2 == 0){
@@ -245,7 +246,7 @@ public class Juego2 extends JFrame {
 && !collision23() && !collision24() && !collision25() && !collision26() && !collision27() && !collision28() && !collision29() && !collision30() && !collision31() && !collision32() && !collision33()
 && !collision34() && !collision35() && !collision36() && !collision37() && !collision38() && !collision39() && !collision40() && !collision41() && !collision42() && !collision43() && !collision44()
 && !collision45() && !collision46() && !collision47() && !collision48() && !collision49() && !collision50() && !collision51() && !collision52() && !collision53() && !collision54() && !collision55()
-&& !collision56() && !collision57()){
+&& !collision56() && !collision57() && !collision58()){
 						suma++;
 						if(suma % 2 == 0){
 							ImageIcon icono = new ImageIcon(getClass().getResource("/Level1/kaviDer1.png"));
@@ -301,6 +302,10 @@ public class Juego2 extends JFrame {
 		fondo = new JLabel("");
 		fondo.setBounds(0, 0, 1368, 705);
 		fondo.setVisible(false);
+		
+		pared58 = new JLabel("");
+		pared58.setBounds(243, 249, 53, 456);
+		contentPane.add(pared58);
 		
 		pared57 = new JLabel("");
 		pared57.setBounds(726, 565, 9, 54);
@@ -959,4 +964,12 @@ public class Juego2 extends JFrame {
 		}
 			return resultado57;
 		}
+	private boolean collision58(){
+		boolean resultado58= false;
+		if (Pies.getBounds().intersects(pared58.getBounds())){
+			resultado58 = true;
+		}
+			return resultado58;
+		}
+	
 }
